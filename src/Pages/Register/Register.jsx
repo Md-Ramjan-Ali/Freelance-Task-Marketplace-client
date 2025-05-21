@@ -39,7 +39,7 @@ const Register = () => {
       .then((result) => {
         const googleUser = result.user;
         setUser(googleUser);
-        navigate('/')
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

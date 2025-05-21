@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import { useLoaderData } from "react-router";
 import MyPostedTasksTable from "../MyPostedTasksTable/MyPostedTasksTable";
@@ -7,11 +7,14 @@ import Swal from "sweetalert2";
 const MyPostTask = () => {
   const { user } = use(AuthContext);
 
-  const taskData = useLoaderData();
+  const initialTaskData = useLoaderData();
+  const [taskData, setTaskData] = useState(initialTaskData);
 
   const myTaskData = taskData.filter(
     (task) => task.name || task.email === user.displayName || user.email
   );
+
+  // console.log(myTaskData);
 
   const handleTaskDelete = (id) => {
     console.log(id);
@@ -25,22 +28,24 @@ const MyPostTask = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-     
       if (result.isConfirmed) {
-
-        fetch(`http://localhost:5000/tasks/${id}`,{
-          method: 'DELETE'
+        fetch(`http://localhost:5000/tasks/${id}`, {
+          method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
           });
 
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success",
-        // });
+        const remainingTask = taskData.filter((task) => task._id !== id);
+        setTaskData(remainingTask);
       }
     });
   };
