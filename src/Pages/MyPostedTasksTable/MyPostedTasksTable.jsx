@@ -24,7 +24,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                 <td>${task.budget}</td>
                 <td className="space-x-3">
                   {/* Update Button */}
-                  <Link to={`/update-task/${task._id}`}>
+                  <Link to={`/updatetask/${task._id}`}>
                     <button className="btn btn-xs btn-outline btn-info">
                       Update
                     </button>

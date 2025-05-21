@@ -5,7 +5,7 @@ const TaskCard = ({task}) => {
   const { _id, title, category, description, deadline, budget } = task;
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition max-h-80 h-full">
+      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition max-h-full h-full">
         <div className="card-body">
           <h2 className="card-title text-xl font-bold text-primary">{title}</h2>
           <p className="text-sm text-gray-600">
@@ -25,9 +25,9 @@ const TaskCard = ({task}) => {
               <span className="font-semibold">Budget:</span> ${budget}
             </p>
           </div>
-          <div className="card-actions justify-end mt-4">
+          <div className="  mt-4">
             <Link to={`/taskdetails/${_id}`}>
-              <button className="btn btn-sm btn-primary">See Details</button>
+              <button className="btn btn-sm btn-primary w-full">See Details</button>
             </Link>
           </div>
         </div>

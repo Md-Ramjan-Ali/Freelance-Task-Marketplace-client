@@ -11,7 +11,7 @@ const MyPostTask = () => {
   const [taskData, setTaskData] = useState(initialTaskData);
 
   const myTaskData = taskData.filter(
-    (task) => task.name || task.email === user.displayName || user.email
+    (task) =>task.email === user.email
   );
 
   // console.log(myTaskData);

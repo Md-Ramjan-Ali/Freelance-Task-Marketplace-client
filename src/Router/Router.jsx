@@ -13,6 +13,7 @@ import Privacy from "../Pages/Privacy/Privacy";
 import Terms from "../Pages/Terms/Terms";
 import ContactDetails from "../Pages/ContactDetails/ContactDetails";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
+import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 
 const router = createBrowserRouter([
   {
@@ -47,9 +48,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/taskdetails/:id",
+        loader: ({params})=>fetch(`http://localhost:5000/tasks/${params.id}`),
         element: (
           <PrivetRouter>
             <TaskDetails></TaskDetails>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/updatetask/:id",
+        loader: ({params}) =>
+          fetch(`http://localhost:5000/tasks/${params.id}`),
+        element: (
+          <PrivetRouter>
+            <UpdateTask></UpdateTask>
           </PrivetRouter>
         ),
       },
