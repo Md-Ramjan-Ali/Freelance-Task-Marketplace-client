@@ -12,12 +12,13 @@ const Footer = () => {
             {/* Left Column: Logo + Description */}
             <div>
               <Link to="/" className="flex gap-1 items-center cursor-pointer">
-                <img className="w-16 " src={FooterLogo} alt="" />
+                <img className="w-16" src={FooterLogo} alt="" />
                 <h2 className=" text-2xl font-bold ">JobPond</h2>
               </Link>
               <p className="mt-2 text-gray-400">
-                Discover and reserve seats at the most exciting local events.
-                Stay connected with your community.
+                A freelancer marketplace is an online platform where clients can
+                post tasks or projects and hire skilled freelancers to complete
+                them.
               </p>
             </div>
 
@@ -27,6 +28,11 @@ const Footer = () => {
                 Important Info
               </h3>
               <ul className="space-y-2 text-gray-300">
+                <li>
+                  <Link to="/contact" className="hover:text-white">
+                    Contact details
+                  </Link>
+                </li>
                 <li>
                   <Link to="/terms" className="hover:text-white">
                     Terms & Conditions
