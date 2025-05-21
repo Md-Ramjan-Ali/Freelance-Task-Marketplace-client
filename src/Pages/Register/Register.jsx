@@ -1,15 +1,57 @@
-import React, { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router';
+import React, { use, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../AuthContext/AuthContext";
 
 const Register = () => {
-  const [showPassword,setShowPassword]=useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const { createUser, setUser, updateUser, signInGoogle } = use(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const { name, photo, email, password } = Object.fromEntries(
+      formData.entries()
+    );
+
+    //create user with email,password
+    createUser(email, password)
+      .then((result) => {
+        // console.log(result.user);
+        const user = result.user;
+
+        //update profile
+        updateUser({ displayName: name, photoURL: photo }).then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          navigate("/");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleSignInGoogle = () => {
+    signInGoogle()
+      .then((result) => {
+        const googleUser = result.user;
+        setUser(googleUser);
+        navigate('/')
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
         <div className="card-body">
-          <h1 className="text-3xl font-bold text-center">Register now!</h1>
-          <form onSubmit={'handleRegister'} className="fieldset">
+          <h1 className="text-3xl font-bold text-center">Sign UP now!</h1>
+          <form onSubmit={handleSignUp} className="fieldset">
             {/* Name  */}
             <label className="label">Name</label>
             <input
@@ -66,7 +108,7 @@ const Register = () => {
               </button>
             </div>
             <button type="submit" className="btn btn-neutral mt-4">
-              Register
+              Sign Up
             </button>
           </form>
           <p className="font-semibold text-center pt-5">
@@ -86,7 +128,7 @@ const Register = () => {
             <div>
               {/* login with google */}
               <button
-                onClick={'handleLoginGoogle'}
+                onClick={handleSignInGoogle}
                 className="btn bg-white text-black border-[#e5e5e5]"
               >
                 <svg

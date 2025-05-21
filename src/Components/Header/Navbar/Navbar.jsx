@@ -1,12 +1,14 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router';
+import React, { use } from "react";
+import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../../AuthContext/AuthContext";
+import Logo from '../../../assets/logo.png'
 
 const Navbar = () => {
+  const { user, logOUt } = use(AuthContext);
 
-
-
-
-
+  const handleLogOut = () => {
+    logOUt();
+  };
 
   const links = (
     <>
@@ -53,7 +55,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="flex gap-1 items-center cursor-pointer">
-            <img className="w-16 " src={"logo"} alt="" />
+            <img className="w-16 " src={Logo} alt="" />
             <h2 className=" text-2xl font-bold ">JobPond</h2>
           </Link>
         </div>
@@ -61,7 +63,7 @@ const Navbar = () => {
           <ul className="flex gap-8">{links}</ul>
         </div>
         <div className="navbar-end gap-3">
-          {/* <div
+          <div
             className="cursor-pointer tooltip tooltip-left"
             data-tip={user?.displayName}
           >
@@ -74,8 +76,8 @@ const Navbar = () => {
             ) : (
               ""
             )}
-          </div> */}
-          {/* {user ? (
+          </div>
+          {user ? (
             <button
               onClick={handleLogOut}
               className="btn bg-primary text-white"
@@ -83,17 +85,15 @@ const Navbar = () => {
               LogOut
             </button>
           ) : (
-            <Link to="/auth/login" className="btn bg-primary text-white">
-              Login
-            </Link>
-          )} */}
-
-          <Link to="/auth/login">
-            <button className="btn bg-primary text-white">Login</button>
-          </Link>
-          <Link to="/auth/register">
-            <button className="btn bg-primary text-white">Sign up</button>
-          </Link>
+            <>
+              <Link to="/auth/login">
+                <button className="btn bg-primary text-white">Login</button>
+              </Link>
+              <Link to="/auth/register">
+                <button className="btn bg-primary text-white">Sign up</button>
+              </Link>
+            </>
+          )}
         </div>
       </nav>
     </div>

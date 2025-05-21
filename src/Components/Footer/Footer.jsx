@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router';
+import FooterLogo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
             {/* Left Column: Logo + Description */}
             <div>
               <Link to="/" className="flex gap-1 items-center cursor-pointer">
-                <img className="w-16 " src="" alt="" />
+                <img className="w-16 " src={FooterLogo} alt="" />
                 <h2 className=" text-2xl font-bold ">JobPond</h2>
               </Link>
               <p className="mt-2 text-gray-400">

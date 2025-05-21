@@ -1,14 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../AuthContext/AuthContext";
 
 const Login = () => {
+  const { signInUser, setUser, signInGoogle } = use(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // sign in user with email and password
+    signInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleSignInGoogle = () => {
+    signInGoogle()
+      .then((result) => {
+        const googleUser = result.user;
+        setUser(googleUser);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
-      
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center">Login now!</h1>
-          <form onSubmit={'handleLogin'} className="fieldset">
+          <form onSubmit={handleSignIn} className="fieldset">
             {/* email  */}
             <label className="label">Email</label>
             <input
@@ -29,9 +62,7 @@ const Login = () => {
             />
 
             <div>
-              <Link className="link link-hover">
-                Forgot password?
-              </Link>
+              <Link className="link link-hover">Forgot password?</Link>
             </div>
             <button type="submit" className="btn btn-neutral mt-4">
               Login
@@ -53,7 +84,7 @@ const Login = () => {
             <div>
               {/* google login */}
               <button
-                onClick={'handleLoginGoogle'}
+                onClick={handleSignInGoogle}
                 className="btn bg-white text-black border-[#e5e5e5]"
               >
                 <svg

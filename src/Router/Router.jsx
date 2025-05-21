@@ -8,6 +8,7 @@ import AuthLayout from "../MainLayout/AuthLayout";
 import AddTask from "../Pages/AddTask/AddTask";
 import BrowseTask from "../Pages/BrowseTask/BrowseTask";
 import MyPostTask from "../Pages/MyPostTask/MyPostTask";
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/myposttask',
-        Component: MyPostTask
+        element: <PrivetRouter><MyPostTask></MyPostTask></PrivetRouter>
       }
     ],
   },
