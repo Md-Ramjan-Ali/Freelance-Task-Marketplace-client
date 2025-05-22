@@ -8,9 +8,8 @@ const Root = () => {
   const { state } = useNavigation();
   return (
     <div>
-      <header>
-        <Navbar></Navbar>
-      </header>
+      <Navbar></Navbar>
+
       <main>{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>
       <footer>
         <Footer></Footer>

@@ -14,6 +14,7 @@ import Terms from "../Pages/Terms/Terms";
 import ContactDetails from "../Pages/ContactDetails/ContactDetails";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
+import TaskBidsView from "../Pages/TaskBidsView/TaskBidsView";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/taskdetails/:id",
-        loader: ({params})=>fetch(`http://localhost:5000/tasks/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tasks/${params.id}`),
         element: (
           <PrivetRouter>
             <TaskDetails></TaskDetails>
@@ -57,11 +59,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/updatetask/:id",
-        loader: ({params}) =>
+        loader: ({ params }) =>
           fetch(`http://localhost:5000/tasks/${params.id}`),
         element: (
           <PrivetRouter>
             <UpdateTask></UpdateTask>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/bidsview/:id",
+        loader:({params})=>fetch(`http://localhost:5000/tasks/${params.id}`),
+        element: (
+          <PrivetRouter>
+            <TaskBidsView></TaskBidsView>
           </PrivetRouter>
         ),
       },

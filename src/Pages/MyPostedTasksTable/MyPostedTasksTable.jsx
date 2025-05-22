@@ -25,7 +25,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                 <td className="space-x-3">
                   {/* Update Button */}
                   <Link to={`/updatetask/${task._id}`}>
-                    <button className="btn btn-xs btn-outline btn-info">
+                    <button className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-info">
                       Update
                     </button>
                   </Link>
@@ -33,14 +33,14 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                   {/* Delete Button */}
                   <button
                     onClick={() => handleTaskDelete(task._id)}
-                    className="btn btn-xs btn-outline btn-error"
+                    className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white  btn-error"
                   >
                     Delete
                   </button>
 
                   {/* Bids Button */}
-                  <Link to={`/task-bids/${task._id}`}>
-                    <button className="btn btn-xs btn-outline btn-success">
+                  <Link to={`/bidsview/${task._id}`}>
+                    <button className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-success">
                       Bids
                     </button>
                   </Link>

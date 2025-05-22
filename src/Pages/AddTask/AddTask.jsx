@@ -29,17 +29,19 @@ const AddTask = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-10">
       <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="text-2xl font-bold text-center py-5">Add Task</h2>
+        <h2 className="label justify-center text-2xl font-bold py-5">
+          Add Job Task
+        </h2>
         <div className="card-body">
           <form onSubmit={handleAddTask}>
             {/* task title */}
             <fieldset className="fieldset ">
-              <label className="label">Task Title</label>
+              <label className="label text-[.885rem] font-semibold">
+                Task Title
+              </label>
               <input
                 name="title"
                 type="text"
-                // value={formData.title}
-                // onChange={handleChange}
                 className="input input-bordered w-full"
                 placeholder="Task Title"
                 required
@@ -48,11 +50,11 @@ const AddTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className="label">Category </label>
+              <label className="label text-[.885rem] font-semibold">
+                Category
+              </label>
               <select
                 name="category"
-                // value={formData.category}
-                // onChange={handleChange}
                 className="select select-bordered w-full"
                 required
               >
@@ -66,11 +68,11 @@ const AddTask = () => {
 
             {/* description */}
             <fieldset className="fieldset ">
-              <label className="label">Description</label>
+              <label className="label text-[.885rem] font-semibold">
+                Description
+              </label>
               <textarea
                 name="description"
-                // value={formData.description}
-                // onChange={handleChange}
                 className="textarea textarea-bordered w-full"
                 placeholder="Describe what needs to be done"
                 required
@@ -79,12 +81,12 @@ const AddTask = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/* deadline */}
               <fieldset className="fieldset ">
-                <label className="label">Deadline</label>
+                <label className="label text-[.885rem] font-semibold">
+                  Deadline
+                </label>
                 <input
                   type="date"
                   name="deadline"
-                  // value={formData.deadline}
-                  // onChange={handleChange}
                   className="input input-bordered w-full"
                   required
                 />
@@ -92,12 +94,12 @@ const AddTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className="label">Budget</label>
+                <label className="label text-[.885rem] font-semibold">
+                  Budget
+                </label>
                 <input
                   type="number"
                   name="budget"
-                  // value={formData.budget}
-                  // onChange={handleChange}
                   className="input input-bordered w-full"
                   placeholder="Budget"
                   required
@@ -106,7 +108,9 @@ const AddTask = () => {
 
               {/* User Email */}
               <fieldset className="fieldset ">
-                <label className="label">User Email</label>
+                <label className="label text-[.885rem] font-semibold">
+                  User Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -118,7 +122,9 @@ const AddTask = () => {
 
               {/* User Name */}
               <fieldset className="fieldset ">
-                <label className="label">User Name</label>
+                <label className="label text-[.885rem] font-semibold">
+                  User Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -129,7 +135,7 @@ const AddTask = () => {
               </fieldset>
             </div>
             <div className="card-actions pt-5">
-              <button className="btn btn-primary text-white  w-full">
+              <button className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
                 Add Task
               </button>
             </div>
