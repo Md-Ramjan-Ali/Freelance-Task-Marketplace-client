@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import { FcBusinessman } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
+import { Tooltip } from "react-tooltip";
 
 const TaskDetails = () => {
 
@@ -29,20 +30,17 @@ const TaskDetails = () => {
     <div className="max-w-4xl mx-auto my-10">
       <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-5">
         <div className="text-center mb-10">
-          <div className=" tooltip tooltip-top" data-tip="Author">
-            {/* <figure>
-              <img
-                className="w-36 h-36 rounded-full"
-                src={photoURL}
-                alt="Movie"
-              />
-            </figure> */}
+          <div
+            className="flex justify-center items-center"
+            data-tooltip-id="my-tooltip"
+            data-tooltip-place="top"
+            data-tooltip-content="Author"
+          >
             <p>
               <FcBusinessman size={90} />
             </p>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <p>{/* <FcBusinessman size={30} /> */}</p>
             <p className="text-xl font-semibold">Buyer:</p>
             <h2 className=" font-semibold">{name}</h2>
           </div>
@@ -55,7 +53,9 @@ const TaskDetails = () => {
         </div>
 
         <div className="card-body space-y-3">
-          <p className="text-center text-lg font-bold">Your Bid for: {bidsCount}</p>
+          <p className="text-center text-lg font-bold">
+            Your Bid for: {bidsCount}
+          </p>
           <h2 className="card-title text-xl font-bold text-primary">
             Job Title: {title}
           </h2>
@@ -77,10 +77,14 @@ const TaskDetails = () => {
             </p>
           </div>
         </div>
-        <button onClick={handleBids} className="btn btn-primary">
+        <button
+          onClick={handleBids}
+          className="btn bg-green-500 hover:bg-green-700 text-white"
+        >
           Bid Now
         </button>
       </div>
+      <Tooltip id="my-tooltip" />
     </div>
   );
 };

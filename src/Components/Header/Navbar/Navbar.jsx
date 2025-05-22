@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../../AuthContext/AuthContext";
 import Logo from '../../../assets/logo.png'
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
@@ -63,8 +64,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3">
         <div
-          className="cursor-pointer tooltip tooltip-left"
-          data-tip={user?.displayName}
+          className="cursor-pointer"
+          data-tooltip-id="my-tooltip"
+          data-tooltip-place="left"
+          data-tooltip-content={user?.displayName}
         >
           {user ? (
             <img
@@ -76,6 +79,7 @@ const Navbar = () => {
             ""
           )}
         </div>
+
         {user ? (
           <button
             onClick={handleLogOut}
@@ -98,6 +102,7 @@ const Navbar = () => {
           </>
         )}
       </div>
+      <Tooltip id="my-tooltip" />
     </nav>
   );
 };
