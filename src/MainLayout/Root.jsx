@@ -5,7 +5,7 @@ import Footer from "../Components/Footer/Footer";
 import Loading from "../Loading/Loading";
 
 const Root = () => {
-  const {state}=useNavigation()
+  const { state } = useNavigation();
   return (
     <div>
       <header>

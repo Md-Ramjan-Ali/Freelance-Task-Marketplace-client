@@ -1,44 +1,61 @@
-import React, { use } from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
-import { AuthContext } from "../../AuthContext/AuthContext";
 import { FcBusinessman } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 
 const TaskDetails = () => {
-  const {user}=use(AuthContext)
-  console.log(user);
-  const {displayName, email, photoURL}=user
+
   const task = useLoaderData();
+  const [bidsCount, setBidsCount] = useState(task.bidsCount || 0);
+
   console.log(task);
-  const { title, category, description, deadline, budget } = task;
+  const { title, category, description, deadline, budget, name, email, _id } =
+    task;
+
+  const handleBids = () => {
+    fetch(`http://localhost:5000/tasks/${_id}/bid`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          setBidsCount((prev) => prev + 1);
+        }
+      });
+  };
 
   return (
     <div className="max-w-4xl mx-auto my-10">
       <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-5">
         <div className="text-center mb-10">
           <div className=" tooltip tooltip-top" data-tip="Author">
-            <figure>
+            {/* <figure>
               <img
                 className="w-36 h-36 rounded-full"
                 src={photoURL}
                 alt="Movie"
               />
-            </figure>
+            </figure> */}
+            <p>
+              <FcBusinessman size={90} />
+            </p>
           </div>
           <div className="flex justify-center items-center gap-2">
             <p>{/* <FcBusinessman size={30} /> */}</p>
             <p className="text-xl font-semibold">Buyer:</p>
-            <h2 className=" font-semibold">{displayName}</h2>
+            <h2 className=" font-semibold">{name}</h2>
           </div>
           <div className="flex justify-center items-center gap-2">
             <p>
-              <MdEmail size={30} />
+              <MdEmail size={25} />
             </p>
             <p>{email}</p>
           </div>
         </div>
 
         <div className="card-body space-y-3">
+          <p className="text-center text-lg font-bold">Your Bid for: {bidsCount}</p>
           <h2 className="card-title text-xl font-bold text-primary">
             Job Title: {title}
           </h2>
@@ -51,7 +68,7 @@ const TaskDetails = () => {
               {description}
             </p>
           </div>
-          <div className="mt-2 text-sm">
+          <div className="mt-2 text-sm space-y-3">
             <p>
               <span className="font-semibold">Deadline:</span> {deadline}
             </p>
@@ -60,6 +77,9 @@ const TaskDetails = () => {
             </p>
           </div>
         </div>
+        <button onClick={handleBids} className="btn btn-primary">
+          Bid Now
+        </button>
       </div>
     </div>
   );
