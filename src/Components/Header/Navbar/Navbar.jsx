@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../../AuthContext/AuthContext";
 import Logo from '../../../assets/logo.png'
 import { Tooltip } from "react-tooltip";
+import ToggleTheme from "../../ToggleTheme/ToggleTheme";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
@@ -54,15 +55,18 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="flex gap-1 items-center cursor-pointer">
+        <Link to="/" className="flex items-center cursor-pointer">
           <img className="w-16 " src={Logo} alt="" />
-          <h2 className=" text-2xl font-bold ">JobPond</h2>
+          <h2 className=" text-2xl font-bold text-green-500">JobPond</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-8">{links}</ul>
       </div>
       <div className="navbar-end gap-3">
+        <div className="card items-center">
+          <ToggleTheme></ToggleTheme>
+        </div>
         <div
           className="cursor-pointer"
           data-tooltip-id="my-tooltip"

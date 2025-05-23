@@ -4,6 +4,7 @@ import FeatureTask from "../FeatureTask/FeatureTask";
 import JobSearch from "../JobSearch/JobSearch";
 import Servises from "../Servises/Servises";
 
+
 const Home = () => {
   return (
     <div className="my-5">
@@ -26,6 +27,8 @@ const Home = () => {
       <section className="max-w-screen-xl mx-auto mt-20">
         <Servises></Servises>
       </section>
+
+      
     </div>
   );
 };

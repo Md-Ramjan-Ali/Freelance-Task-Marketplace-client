@@ -27,9 +27,9 @@ const AddTask = () => {
       });
   };
   return (
-    <div className="max-w-screen-xl mx-auto my-10">
+    <div className="max-w-screen-xl mx-auto my-5">
       <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="label justify-center text-2xl font-bold py-5">
+        <h2 className="label justify-center text-2xl font-bold pt-5">
           Add Job Task
         </h2>
         <div className="card-body">

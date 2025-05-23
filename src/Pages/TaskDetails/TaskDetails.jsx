@@ -5,7 +5,6 @@ import { MdEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 
 const TaskDetails = () => {
-
   const task = useLoaderData();
   const [bidsCount, setBidsCount] = useState(task.bidsCount || 0);
 
@@ -53,8 +52,8 @@ const TaskDetails = () => {
         </div>
 
         <div className="card-body space-y-3">
-          <p className="text-center text-lg font-bold">
-            Your Bid for: {bidsCount}
+          <p className="text-center text-lg font-semibold">
+            Your Bid for: {bidsCount} opportunities.
           </p>
           <h2 className="card-title text-xl font-bold text-primary">
             Job Title: {title}

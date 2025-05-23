@@ -29,7 +29,14 @@ const FeatureTask = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
         {featuredTasks.map((task) => (
-          <div key={task._id} className="card bg-base-100 shadow-xl border">
+          <div
+            key={task._id}
+            className="card bg-base-100 shadow-xl border"
+            data-aos="zoom-in-up"
+            
+            data-aos-easing="linear"
+            data-aos-duration="600"
+          >
             <div className="card-body">
               <div className="flex gap-1">
                 <span>
