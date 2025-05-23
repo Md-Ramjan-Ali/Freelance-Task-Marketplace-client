@@ -58,6 +58,7 @@ const MyPostTask = () => {
           handleTaskDelete={handleTaskDelete}
         ></MyPostedTasksTable>
       </div>
+      
     </div>
   );
 };
