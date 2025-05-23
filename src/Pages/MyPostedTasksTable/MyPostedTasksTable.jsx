@@ -83,7 +83,9 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
             <div className="modal-action">
               <form method="dialog">
                 {/* if there is a button in form, it will close the modal */}
-                <button className="btn">Close</button>
+                <button className="btn bg-green-500 hover:bg-green-700 text-white">
+                  Close
+                </button>
               </form>
             </div>
           </div>

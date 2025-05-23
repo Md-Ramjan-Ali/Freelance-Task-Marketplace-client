@@ -4,7 +4,6 @@ import { FaEnvelope, FaHome, FaPhoneAlt } from 'react-icons/fa';
 const ContactDetails = () => {
   return (
     <div>
-      
       <div className="max-w-screen-xl mx-auto grid lg:grid-cols-10 gap-5 mt-10 p-5">
         <div className=" lg:col-span-4">
           <h2 className="text-2xl font-bold mb-4">Office Address</h2>
@@ -94,7 +93,7 @@ const ContactDetails = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="btn px-8 py-3 rounded font-semibold bg-primary text-white"
+                className="btn px-8 py-3 rounded font-semibold bg-green-500 hover:bg-green-700 text-white"
               >
                 SEND MESSAGE
               </button>

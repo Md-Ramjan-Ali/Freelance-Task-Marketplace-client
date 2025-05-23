@@ -1,10 +1,11 @@
 import React, { use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
 
 const Login = () => {
   const { signInUser, setUser, signInGoogle } = use(AuthContext);
   const navigate = useNavigate();
+  const location=useLocation()
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        navigate("/");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);
@@ -30,7 +31,7 @@ const Login = () => {
       .then((result) => {
         const googleUser = result.user;
         setUser(googleUser);
-        navigate("/");
+        navigate(`${location.state ? location.state:'/'}`);
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +65,10 @@ const Login = () => {
             <div>
               <Link className="link link-hover">Forgot password?</Link>
             </div>
-            <button type="submit" className="btn btn-neutral mt-4">
+            <button
+              type="submit"
+              className="btn bg-green-500 hover:bg-green-700 text-white mt-4"
+            >
               Login
             </button>
           </form>

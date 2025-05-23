@@ -31,10 +31,16 @@ const TaskSlider = () => {
               </div>
             </div>
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide3" className="btn btn-circle">
+              <a
+                href="#slide3"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❮
               </a>
-              <a href="#slide2" className="btn btn-circle">
+              <a
+                href="#slide2"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❯
               </a>
             </div>
@@ -55,10 +61,16 @@ const TaskSlider = () => {
               </Link>
             </div>
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide1" className="btn btn-circle">
+              <a
+                href="#slide1"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❮
               </a>
-              <a href="#slide3" className="btn btn-circle">
+              <a
+                href="#slide3"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❯
               </a>
             </div>
@@ -79,10 +91,16 @@ const TaskSlider = () => {
               </Link>
             </div>
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-              <a href="#slide2" className="btn btn-circle">
+              <a
+                href="#slide2"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❮
               </a>
-              <a href="#slide1" className="btn btn-circle">
+              <a
+                href="#slide1"
+                className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
+              >
                 ❯
               </a>
             </div>

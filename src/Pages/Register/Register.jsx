@@ -107,7 +107,10 @@ const Register = () => {
                 )}
               </button>
             </div>
-            <button type="submit" className="btn btn-neutral mt-4">
+            <button
+              type="submit"
+              className="btn bg-green-500 hover:bg-green-700 text-white mt-4"
+            >
               Sign Up
             </button>
           </form>

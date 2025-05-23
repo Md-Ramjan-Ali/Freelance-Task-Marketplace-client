@@ -34,7 +34,7 @@ const TaskDetails = () => {
             className="flex justify-center items-center"
             data-tooltip-id="my-tooltip"
             data-tooltip-place="top"
-            data-tooltip-content="Author"
+            data-tooltip-content="Buyer"
           >
             <p>
               <FcBusinessman size={90} />
