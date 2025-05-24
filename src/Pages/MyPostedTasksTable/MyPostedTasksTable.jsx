@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import EmtyTask from "../../Components/EmtyTask/EmtyTask";
 
 const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
   const [bidsCount, setBidsCount] = useState(null);
+
+  if(tasks.length===0){
+    return <EmtyTask></EmtyTask>
+  }
  
   return (
     <div>
+      <h2 className="text-3xl font-semibold text-center mb-10 text-green-500">My All Posted Task</h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full text-sm">
           <thead className="bg-base-200 text-base font-semibold">
@@ -19,6 +25,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
           </thead>
           <tbody>
             {tasks.map((task, index) => (
+             
               <tr key={task._id}>
                 <td>{index + 1}</td>
                 <td className="font-medium">{task.title}</td>
