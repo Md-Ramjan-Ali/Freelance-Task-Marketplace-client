@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
+import Swal from "sweetalert2";
 
 const AddTask = () => {
   const { user } = use(AuthContext);
@@ -11,27 +12,28 @@ const AddTask = () => {
     const userTaskData = Object.fromEntries(formData.entries());
     console.log(userTaskData);
 
-    fetch("http://localhost:5000/tasks",{
-      method: 'POST',
-      headers:{
-        'content-type': 'application/json'
+    fetch("http://localhost:5000/tasks", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(userTaskData)
+      body: JSON.stringify(userTaskData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-
-          console.log(data);
+          Swal.fire({
+            icon: "success",
+            title: "Your Add Task Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          e.target.reset()
         }
       });
   };
   return (
-    <div
-      className="max-w-screen-xl mx-auto my-5"
-    
-    
-    >
+    <div className="max-w-screen-xl mx-auto my-5">
       <div className="card bg-base-100 w-full shadow-sm">
         <h2 className="label justify-center text-2xl font-bold pt-5">
           Add Job Task

@@ -1,15 +1,23 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../../AuthContext/AuthContext";
-import Logo from '../../../assets/logo.png'
+import Logo from "../../../assets/logo.png";
 import { Tooltip } from "react-tooltip";
 import ToggleTheme from "../../ToggleTheme/ToggleTheme";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
 
   const handleLogOut = () => {
     logOUt();
+
+    Swal.fire({
+      icon: "success",
+      title: "LogOut Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   const links = (

@@ -38,7 +38,7 @@ const MyPostTask = () => {
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Your task has been deleted.",
                 icon: "success",
               });
             }

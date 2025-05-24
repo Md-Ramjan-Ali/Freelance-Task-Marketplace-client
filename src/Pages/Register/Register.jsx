@@ -2,6 +2,8 @@ import React, { use, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
+import { Slide, toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,16 +19,41 @@ const Register = () => {
       formData.entries()
     );
 
+    //password validation
+    const upper = /[A-Z]/.test(password);
+    const lower = /[a-z]/.test(password);
+    if (password.length < 6 || !upper || !lower) {
+      toast.error(
+        "Password must be at least 6 characters and include uppercase and lowercase letters",
+        {
+          position: "top-center",
+          autoClose: 4000,
+          theme: "light",
+          transition: Slide,
+        }
+      );
+      return;
+    }
+
     //create user with email,password
     createUser(email, password)
       .then((result) => {
         // console.log(result.user);
         const user = result.user;
+        Swal.fire({
+       
+          icon: "success",
+          title: "Register Successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
         //update profile
         updateUser({ displayName: name, photoURL: photo }).then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
-          navigate("/");
+          setTimeout(() => {
+            navigate(`${location.state ? location.state : "/"}`);
+          }, 1500);
         });
       })
       .catch((error) => {
@@ -38,8 +65,20 @@ const Register = () => {
     signInGoogle()
       .then((result) => {
         const googleUser = result.user;
+        toast.success("Google Login Successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         setUser(googleUser);
-        navigate("/");
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : "/"}`);
+        }, 1500);
       })
       .catch((error) => {
         console.log(error);
@@ -94,7 +133,7 @@ const Register = () => {
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"
               />
 
-              <button
+              <p
                 onClick={() => {
                   setShowPassword(!showPassword);
                 }}
@@ -105,7 +144,7 @@ const Register = () => {
                 ) : (
                   <FaEye size={15}></FaEye>
                 )}
-              </button>
+              </p>
             </div>
             <button
               type="submit"

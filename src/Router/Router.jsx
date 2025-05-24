@@ -68,15 +68,6 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/bidsview/:id",
-        loader:({params})=>fetch(`http://localhost:5000/tasks/${params.id}`),
-        element: (
-          <PrivetRouter>
-            <TaskBidsView></TaskBidsView>
-          </PrivetRouter>
-        ),
-      },
-      {
         path: "/contact",
         Component: ContactDetails,
       },

@@ -41,7 +41,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                   </button>
 
                   {/* Bids Button */}
-                  {/* <Link to={`/bidsview/${task._id}`}> */}
+
                   <button
                     onClick={() => {
                       setBidsCount(task);
@@ -51,7 +51,6 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                   >
                     Bids
                   </button>
-                  {/* </Link> */}
                 </td>
               </tr>
             ))}

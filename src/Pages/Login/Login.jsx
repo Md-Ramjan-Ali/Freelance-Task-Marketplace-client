@@ -1,11 +1,13 @@
 import React, { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signInUser, setUser, signInGoogle } = use(AuthContext);
   const navigate = useNavigate();
-  const location=useLocation()
+  const location = useLocation();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,11 +20,30 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         const user = result.user;
+        Swal.fire({
+         
+          icon: "success",
+          title: "Login Successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         setUser(user);
-        navigate(`${location.state ? location.state : "/"}`);
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : "/"}`);
+        }, 1500);
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Incorrect Email and Password!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       });
   };
 
@@ -30,8 +51,20 @@ const Login = () => {
     signInGoogle()
       .then((result) => {
         const googleUser = result.user;
+        toast.success("Google Login Successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         setUser(googleUser);
-        navigate(`${location.state ? location.state:'/'}`);
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : "/"}`);
+        }, 1500);
       })
       .catch((error) => {
         console.log(error);
@@ -124,6 +157,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

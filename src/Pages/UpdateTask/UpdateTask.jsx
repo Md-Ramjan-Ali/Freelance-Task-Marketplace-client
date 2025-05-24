@@ -27,7 +27,7 @@ const UpdateTask = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       
         if (data.modifiedCount) {
           Swal.fire({
             icon: "success",
@@ -48,7 +48,9 @@ const UpdateTask = () => {
           <form onSubmit={handleUpdateTask}>
             {/* task title */}
             <fieldset className="fieldset ">
-              <label className="label">Task Title</label>
+              <label className="label text-[.885rem] font-semibold">
+                Task Title
+              </label>
               <input
                 name="title"
                 type="text"
@@ -63,7 +65,9 @@ const UpdateTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className="label">Category </label>
+              <label className="label text-[.885rem] font-semibold">
+                Category{" "}
+              </label>
               <select
                 name="category"
                 defaultValue={category}
@@ -82,7 +86,9 @@ const UpdateTask = () => {
 
             {/* description */}
             <fieldset className="fieldset ">
-              <label className="label">Description</label>
+              <label className="label text-[.885rem] font-semibold">
+                Description
+              </label>
               <textarea
                 name="description"
                 defaultValue={description}
@@ -96,7 +102,9 @@ const UpdateTask = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/* deadline */}
               <fieldset className="fieldset ">
-                <label className="label">Deadline</label>
+                <label className="label text-[.885rem] font-semibold">
+                  Deadline
+                </label>
                 <input
                   type="date"
                   name="deadline"
@@ -110,7 +118,9 @@ const UpdateTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className="label">Budget</label>
+                <label className="label text-[.885rem] font-semibold">
+                  Budget
+                </label>
                 <input
                   type="number"
                   name="budget"
@@ -125,7 +135,9 @@ const UpdateTask = () => {
 
               {/* User Email */}
               <fieldset className="fieldset ">
-                <label className="label">User Email</label>
+                <label className="label text-[.885rem] font-semibold">
+                  User Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -138,7 +150,9 @@ const UpdateTask = () => {
 
               {/* User Name */}
               <fieldset className="fieldset ">
-                <label className="label">User Name</label>
+                <label className="label text-[.885rem] font-semibold">
+                  User Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -150,7 +164,7 @@ const UpdateTask = () => {
               </fieldset>
             </div>
             <div className="card-actions pt-5">
-              <button className="btn btn-primary text-white  w-full">
+              <button className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
                 Update Task
               </button>
             </div>
