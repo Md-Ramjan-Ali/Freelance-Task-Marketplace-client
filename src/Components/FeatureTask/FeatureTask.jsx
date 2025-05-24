@@ -16,7 +16,6 @@ const FeatureTask = () => {
       });
   }, []);
 
-  // console.log(featuredTasks);
   return (
     <div>
       {/* feature heading */}

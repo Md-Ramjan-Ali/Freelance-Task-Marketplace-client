@@ -1,4 +1,4 @@
-# Freelancia – Freelance Task Marketplace
+# JobPond – Freelance Task Marketplace
 
 🚀 A full-stack freelance task marketplace where users can post tasks and freelancers can browse, bid, and complete jobs based on their skills and availability.
 

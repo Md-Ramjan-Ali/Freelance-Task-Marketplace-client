@@ -8,7 +8,7 @@ const UpdateTask = () => {
   // const { user } = use(AuthContext);
 
   const task = useLoaderData();
-  console.log(task);
+  
   const { title, name, email, description, deadline, category, budget, _id } =
     task;
 
@@ -17,7 +17,7 @@ const UpdateTask = () => {
     const form = e.target;
     const formData = new FormData(form);
     const updateTask = Object.fromEntries(formData.entries());
-    // console.log(updateTask);
+   
 
     fetch(
       `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${_id}`,

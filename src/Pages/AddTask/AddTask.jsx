@@ -11,7 +11,7 @@ const AddTask = () => {
     const form = e.target;
     const formData = new FormData(form);
     const userTaskData = Object.fromEntries(formData.entries());
-    console.log(userTaskData);
+   
 
     fetch("https://freelance-task-marketplace-server-lyart.vercel.app/tasks", {
       method: "POST",

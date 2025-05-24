@@ -13,10 +13,10 @@ const MyPostTask = () => {
 
   const myTaskData = taskData.filter((task) => task.email === user.email);
 
-  // console.log(myTaskData);
+ 
 
   const handleTaskDelete = (id) => {
-    console.log(id);
+
 
     Swal.fire({
       title: "Are you sure?",

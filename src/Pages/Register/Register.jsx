@@ -39,7 +39,7 @@ const Register = () => {
     //create user with email,password
     createUser(email, password)
       .then((result) => {
-        // console.log(result.user);
+        
         const user = result.user;
         Swal.fire({
           icon: "success",

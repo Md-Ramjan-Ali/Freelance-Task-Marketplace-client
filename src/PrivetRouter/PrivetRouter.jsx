@@ -1,29 +1,20 @@
-import React, { use } from 'react';
-import { AuthContext } from '../AuthContext/AuthContext';
-import { Navigate, useLocation } from 'react-router';
-import Loading from '../Loading/Loading';
+import React, { use } from "react";
+import { AuthContext } from "../AuthContext/AuthContext";
+import { Navigate, useLocation } from "react-router";
+import Loading from "../Loading/Loading";
 
-
-const PrivetRouter = ({children}) => {
-
+const PrivetRouter = ({ children }) => {
   const { user, loading } = use(AuthContext);
-  const location =useLocation()
-  console.log(location);
-
-
+  const location = useLocation();
 
   if (loading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
-  if(!user){
-   return <Navigate state={location.pathname} to="/auth/login"></Navigate>;
+  if (!user) {
+    return <Navigate state={location.pathname} to="/auth/login"></Navigate>;
   }
-  return (
-    <div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default PrivetRouter;

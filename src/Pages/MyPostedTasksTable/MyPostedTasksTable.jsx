@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
   const [bidsCount, setBidsCount] = useState(null);
-  console.log(tasks);
+ 
   return (
     <div>
       <div className="overflow-x-auto">

@@ -10,7 +10,7 @@ const TaskDetails = () => {
   const task = useLoaderData();
   const [bidsCount, setBidsCount] = useState(task.bidsCount || 0);
 
-  console.log(task);
+ 
   const { title, category, description, deadline, budget, name, email, _id } =
     task;
 
@@ -23,7 +23,7 @@ const TaskDetails = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       
         if (data.modifiedCount > 0) {
           setBidsCount((prev) => prev + 1);
         }
