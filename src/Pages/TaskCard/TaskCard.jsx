@@ -6,7 +6,10 @@ const TaskCard = ({task}) => {
   const { _id, title, category, description, deadline, budget } = task;
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition max-h-full h-full">
+      <div
+        className="card bg-base-100 shadow-xl border hover:shadow-2xl transition max-h-full h-full"
+       
+      >
         <div className="card-body">
           <div className="flex gap-2 mb-2">
             <span>

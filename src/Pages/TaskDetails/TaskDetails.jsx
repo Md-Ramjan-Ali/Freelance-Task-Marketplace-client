@@ -51,7 +51,11 @@ const TaskDetails = () => {
           </div>
         </div>
 
-        <div className="card-body space-y-3">
+        <div
+          className="card-body space-y-3"
+          
+          
+        >
           <p className="text-center text-lg font-semibold">
             Your Bid for: {bidsCount} opportunities.
           </p>
