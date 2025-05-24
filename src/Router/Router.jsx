@@ -11,10 +11,9 @@ import MyPostTask from "../Pages/MyPostTask/MyPostTask";
 import PrivetRouter from "../PrivetRouter/PrivetRouter";
 import Privacy from "../Pages/Privacy/Privacy";
 import Terms from "../Pages/Terms/Terms";
-import ContactDetails from "../Pages/ContactDetails/ContactDetails";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
-import TaskBidsView from "../Pages/TaskBidsView/TaskBidsView";
+
 
 const router = createBrowserRouter([
   {
@@ -66,10 +65,6 @@ const router = createBrowserRouter([
             <UpdateTask></UpdateTask>
           </PrivetRouter>
         ),
-      },
-      {
-        path: "/contact",
-        Component: ContactDetails,
       },
       {
         path: "/terms",

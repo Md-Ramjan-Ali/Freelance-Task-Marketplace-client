@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router";
 import { FcBusinessman } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
+import { PiSubtitlesFill } from "react-icons/pi";
+import { Helmet } from "react-helmet-async";
 
 const TaskDetails = () => {
   const task = useLoaderData();
@@ -27,6 +29,9 @@ const TaskDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto my-5 lg:my-10 px-2 lg:px-0">
+      <Helmet>
+        <title>Task Details | JobPond</title>
+      </Helmet>
       <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-3 lg:p-5">
         <div className="text-center mb-10">
           <div
@@ -45,22 +50,21 @@ const TaskDetails = () => {
           </div>
           <div className="flex justify-center items-center gap-2">
             <p>
-              <MdEmail size={25} />
+              <MdEmail className="text-orange-500" size={25} />
             </p>
             <p>{email}</p>
           </div>
         </div>
 
-        <div
-          className="card-body space-y-3"
-          
-          
-        >
+        <div className="card-body space-y-3">
           <p className="text-center text-lg font-semibold">
             Your Bid for: {bidsCount} opportunities.
           </p>
-          <h2 className="card-title text-xl font-bold">
-            Job Title: {title}
+          <h2 className="card-title text-xl font-bold ">
+            <span>
+              <PiSubtitlesFill className="text-orange-500" size={30} />
+            </span>{" "}
+            <span className="text-green-500"> {title}</span>
           </h2>
           <p className="text-sm text-gray-600">
             <span className="font-semibold">Category:</span> {category}

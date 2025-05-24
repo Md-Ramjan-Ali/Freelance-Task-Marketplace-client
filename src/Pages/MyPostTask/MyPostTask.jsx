@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthContext/AuthContext";
 import { useLoaderData } from "react-router";
 import MyPostedTasksTable from "../MyPostedTasksTable/MyPostedTasksTable";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyPostTask = () => {
   const { user } = use(AuthContext);
@@ -52,6 +53,9 @@ const MyPostTask = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-10">
+       <Helmet>
+              <title>My Task | JobPond</title>
+            </Helmet>
       <div className="">
         <MyPostedTasksTable
           tasks={myTaskData}

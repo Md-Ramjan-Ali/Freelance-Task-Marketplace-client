@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 // import { AuthContext } from "../../AuthContext/AuthContext";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
@@ -27,7 +28,6 @@ const UpdateTask = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-       
         if (data.modifiedCount) {
           Swal.fire({
             icon: "success",
@@ -40,6 +40,9 @@ const UpdateTask = () => {
   };
   return (
     <div className="max-w-screen-xl mx-auto my-10">
+      <Helmet>
+        <title>Update Task | JobPond</title>
+      </Helmet>
       <div className="card bg-base-100 w-full shadow-sm">
         <h2 className="text-2xl font-bold text-center py-5">
           Update Your Task
@@ -55,7 +58,6 @@ const UpdateTask = () => {
                 name="title"
                 type="text"
                 defaultValue={title}
-             
                 className="input input-bordered w-full"
                 placeholder="Task Title"
                 required
@@ -64,13 +66,10 @@ const UpdateTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className=" text-[.885rem] font-semibold">
-                Category{" "}
-              </label>
+              <label className=" text-[.885rem] font-semibold">Category </label>
               <select
                 name="category"
                 defaultValue={category}
-               
                 className="select select-bordered w-full"
                 required
               >
@@ -90,7 +89,6 @@ const UpdateTask = () => {
               <textarea
                 name="description"
                 defaultValue={description}
-                
                 className="textarea textarea-bordered w-full"
                 placeholder="Describe what needs to be done"
                 required
@@ -106,7 +104,6 @@ const UpdateTask = () => {
                   type="date"
                   name="deadline"
                   defaultValue={deadline}
-                 
                   className="input input-bordered w-full"
                   required
                 />
@@ -114,14 +111,11 @@ const UpdateTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
-                  Budget
-                </label>
+                <label className=" text-[.885rem] font-semibold">Budget</label>
                 <input
                   type="number"
                   name="budget"
                   defaultValue={budget}
-                
                   className="input input-bordered w-full"
                   placeholder="Budget"
                   required
@@ -137,7 +131,6 @@ const UpdateTask = () => {
                   type="email"
                   name="email"
                   defaultValue={email}
-                 
                   readOnly
                   className="input input-bordered w-full  cursor-not-allowed"
                 />
@@ -152,7 +145,6 @@ const UpdateTask = () => {
                   type="text"
                   name="name"
                   defaultValue={name}
-                  
                   readOnly
                   className="input input-bordered w-full  cursor-not-allowed"
                 />

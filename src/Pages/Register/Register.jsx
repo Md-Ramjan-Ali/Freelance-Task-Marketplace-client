@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import { Slide, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +42,6 @@ const Register = () => {
         // console.log(result.user);
         const user = result.user;
         Swal.fire({
-       
           icon: "success",
           title: "Register Successfully!",
           showConfirmButton: false,
@@ -87,6 +87,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Register | JobPond</title>
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center">Sign UP now!</h1>

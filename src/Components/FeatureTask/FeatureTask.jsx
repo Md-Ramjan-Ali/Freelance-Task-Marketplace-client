@@ -19,10 +19,17 @@ const FeatureTask = () => {
     <div>
       {/* feature heading */}
       <div className="">
-        <h2 className="text-3xl font-bold mb-3 text-center">Featured Tasks</h2>
+        <h2 className="text-3xl font-bold mb-3 text-center text-green-500">
+          Featured Tasks
+        </h2>
         <div className="border-1 w-15 mx-auto mb-4"></div>
 
-        <p className="text-2xl text-base-400  text-center">
+        <p
+          className="text-2xl text-base-400  text-center"
+          data-aos="zoom-in"
+          data-aos-easing="linear"
+          data-aos-duration="600"
+        >
           Explore Trending Offers and Find Dream Job
         </p>
       </div>
@@ -41,9 +48,9 @@ const FeatureTask = () => {
             <div className="card-body">
               <div className="flex gap-1">
                 <span>
-                  <MdNewReleases size={24} />
+                  <MdNewReleases className="text-orange-500" size={24} />
                 </span>
-                <h2 className="card-title">{task.title}</h2>
+                <h2 className="card-title text-green-500">{task.title}</h2>
               </div>
               <p>
                 <strong>Category:</strong> {task.category}

@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddTask = () => {
   const { user } = use(AuthContext);
@@ -34,6 +35,9 @@ const AddTask = () => {
   };
   return (
     <div className="max-w-screen-xl mx-auto my-5">
+       <Helmet>
+              <title>Add Task | JobPond</title>
+            </Helmet>
       <div className="card bg-base-100 w-full shadow-sm">
         <h2 className="text-center text-2xl font-bold pt-5">
           Add Job Task

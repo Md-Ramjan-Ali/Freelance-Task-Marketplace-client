@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, setUser, signInGoogle } = use(AuthContext);
@@ -21,7 +22,6 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         Swal.fire({
-         
           icon: "success",
           title: "Login Successfully!",
           showConfirmButton: false,
@@ -72,6 +72,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Login | JobPond</title>
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center">Login now!</h1>
@@ -157,7 +160,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };
