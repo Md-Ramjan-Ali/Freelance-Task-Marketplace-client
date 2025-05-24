@@ -19,13 +19,16 @@ const UpdateTask = () => {
     const updateTask = Object.fromEntries(formData.entries());
     // console.log(updateTask);
 
-    fetch(`http://localhost:5000/tasks/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateTask),
-    })
+    fetch(
+      `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateTask),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

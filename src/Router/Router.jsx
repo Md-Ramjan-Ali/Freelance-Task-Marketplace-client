@@ -14,7 +14,6 @@ import Terms from "../Pages/Terms/Terms";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,12 +33,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/browsetask",
-        loader: () => fetch("http://localhost:5000/tasks"),
+        loader: () =>
+          fetch(
+            "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
+          ),
         Component: BrowseTask,
       },
       {
         path: "/myposttask",
-        loader: () => fetch("http://localhost:5000/tasks"),
+        loader: () =>
+          fetch(
+            "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
+          ),
         element: (
           <PrivetRouter>
             <MyPostTask></MyPostTask>
@@ -49,7 +54,9 @@ const router = createBrowserRouter([
       {
         path: "/taskdetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tasks/${params.id}`),
+          fetch(
+            `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${params.id}`
+          ),
         element: (
           <PrivetRouter>
             <TaskDetails></TaskDetails>
@@ -59,7 +66,9 @@ const router = createBrowserRouter([
       {
         path: "/updatetask/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tasks/${params.id}`),
+          fetch(
+            `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${params.id}`
+          ),
         element: (
           <PrivetRouter>
             <UpdateTask></UpdateTask>

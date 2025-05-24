@@ -13,7 +13,7 @@ const AddTask = () => {
     const userTaskData = Object.fromEntries(formData.entries());
     console.log(userTaskData);
 
-    fetch("http://localhost:5000/tasks", {
+    fetch("https://freelance-task-marketplace-server-lyart.vercel.app/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,26 +29,22 @@ const AddTask = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          e.target.reset()
+          e.target.reset();
         }
       });
   };
   return (
     <div className="max-w-screen-xl mx-auto my-5">
-       <Helmet>
-              <title>Add Task | JobPond</title>
-            </Helmet>
+      <Helmet>
+        <title>Add Task | JobPond</title>
+      </Helmet>
       <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="text-center text-2xl font-bold pt-5">
-          Add Job Task
-        </h2>
+        <h2 className="text-center text-2xl font-bold pt-5">Add Job Task</h2>
         <div className="card-body">
           <form onSubmit={handleAddTask}>
             {/* task title */}
             <fieldset className="fieldset ">
-              <label className="text-[.885rem] font-semibold">
-                Task Title
-              </label>
+              <label className="text-[.885rem] font-semibold">Task Title</label>
               <input
                 name="title"
                 type="text"
@@ -60,9 +56,7 @@ const AddTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className=" text-[.885rem] font-semibold">
-                Category
-              </label>
+              <label className=" text-[.885rem] font-semibold">Category</label>
               <select
                 name="category"
                 className="select select-bordered w-full"
@@ -104,9 +98,7 @@ const AddTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
-                  Budget
-                </label>
+                <label className=" text-[.885rem] font-semibold">Budget</label>
                 <input
                   type="number"
                   name="budget"

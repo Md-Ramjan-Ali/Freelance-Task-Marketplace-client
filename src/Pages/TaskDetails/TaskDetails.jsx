@@ -15,9 +15,12 @@ const TaskDetails = () => {
     task;
 
   const handleBids = () => {
-    fetch(`http://localhost:5000/tasks/${_id}/bid`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${_id}/bid`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

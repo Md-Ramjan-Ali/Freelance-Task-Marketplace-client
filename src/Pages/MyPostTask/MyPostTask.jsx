@@ -11,9 +11,7 @@ const MyPostTask = () => {
   const initialTaskData = useLoaderData();
   const [taskData, setTaskData] = useState(initialTaskData);
 
-  const myTaskData = taskData.filter(
-    (task) =>task.email === user.email
-  );
+  const myTaskData = taskData.filter((task) => task.email === user.email);
 
   // console.log(myTaskData);
 
@@ -30,12 +28,14 @@ const MyPostTask = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/tasks/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
-            
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
@@ -53,16 +53,15 @@ const MyPostTask = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-10">
-       <Helmet>
-              <title>My Task | JobPond</title>
-            </Helmet>
+      <Helmet>
+        <title>My Task | JobPond</title>
+      </Helmet>
       <div className="">
         <MyPostedTasksTable
           tasks={myTaskData}
           handleTaskDelete={handleTaskDelete}
         ></MyPostedTasksTable>
       </div>
-      
     </div>
   );
 };

@@ -7,7 +7,9 @@ const FeatureTask = () => {
   const [featuredTasks, setFeatureTask] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tasks/featuretasks")
+    fetch(
+      "https://freelance-task-marketplace-server-lyart.vercel.app/tasks/featuretasks"
+    )
       .then((res) => res.json())
       .then((data) => {
         setFeatureTask(data);

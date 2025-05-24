@@ -24,9 +24,7 @@ const Footer = () => {
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 ">
           {/* Left: Text and Image */}
           <div
-            data-aos="zoom-in-right"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
+         
           >
             <div className="text-center md:text-left space-y-6 mb-10">
               <Link to="/" className="flex gap-1 items-center cursor-pointer">
@@ -107,9 +105,7 @@ const Footer = () => {
           <form
             onSubmit={handleMassege}
             className="space-y-6"
-            data-aos="zoom-in-left"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
+          
           >
             <h2 className="text-2xl font-bold">Contact With Us</h2>
             <div>
