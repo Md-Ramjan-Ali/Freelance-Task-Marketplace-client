@@ -35,14 +35,14 @@ const AddTask = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-5">
       <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="label justify-center text-2xl font-bold pt-5">
+        <h2 className="text-center text-2xl font-bold pt-5">
           Add Job Task
         </h2>
         <div className="card-body">
           <form onSubmit={handleAddTask}>
             {/* task title */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className="text-[.885rem] font-semibold">
                 Task Title
               </label>
               <input
@@ -56,7 +56,7 @@ const AddTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold">
                 Category
               </label>
               <select
@@ -74,7 +74,7 @@ const AddTask = () => {
 
             {/* description */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold">
                 Description
               </label>
               <textarea
@@ -87,7 +87,7 @@ const AddTask = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/* deadline */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   Deadline
                 </label>
                 <input
@@ -100,7 +100,7 @@ const AddTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   Budget
                 </label>
                 <input
@@ -114,7 +114,7 @@ const AddTask = () => {
 
               {/* User Email */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   User Email
                 </label>
                 <input
@@ -122,13 +122,13 @@ const AddTask = () => {
                   name="email"
                   value={user.email}
                   readOnly
-                  className="input input-bordered w-full bg-gray-100 cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed"
                 />
               </fieldset>
 
               {/* User Name */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   User Name
                 </label>
                 <input
@@ -136,7 +136,7 @@ const AddTask = () => {
                   name="name"
                   value={user.displayName}
                   readOnly
-                  className="input input-bordered w-full bg-gray-100 cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>

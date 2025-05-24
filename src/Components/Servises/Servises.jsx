@@ -5,14 +5,14 @@ const Servises = () => {
   return (
     <section className=" text-center">
       <h2
-        className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
+        className="text-3xl md:text-4xl font-bold mb-12"
         data-aos="zoom-in"
         data-aos-easing="linear"
         data-aos-duration="1000"
       >
         Services We Can Help You
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-3 lg:px-0">
         {/* Card 1 */}
         <div
           className="bg-white border rounded-xl shadow hover:shadow-lg p-6 flex flex-col items-center"

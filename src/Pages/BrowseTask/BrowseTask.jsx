@@ -9,7 +9,7 @@ const BrowseTask = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-10">
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2 lg:px-0"
        
       >
         {taskData.map((task) => (

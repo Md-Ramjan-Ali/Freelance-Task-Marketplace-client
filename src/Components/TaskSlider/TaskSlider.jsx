@@ -12,14 +12,11 @@ const TaskSlider = () => {
         <div className="carousel w-full  my-3 rounded-2xl">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={sliderImg1} className="w-full max-h-[450px] h-full " />
-            <div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-20"
-              
-            >
-              <div className="bg-gray-900/50 p-5 rounded-2xl ">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-20 w-full md:max-w-lg">
+              <div className="md:bg-gray-900/50 p-5 rounded-2xl ">
                 <div className="text-white text-center space-y-4">
                   <h2
-                    className="text-3xl font-bold "
+                    className="text-xl md:text-2xl lg:text-3xl font-bold "
                     data-aos="fade-down"
                     data-aos-delay={300}
                   >
@@ -33,7 +30,11 @@ const TaskSlider = () => {
                       delaySpeed={1000}
                     ></Typewriter>
                   </h2>
-                  <p data-aos="zoom-in" data-aos-delay={500}>
+                  <p
+                    className="text-xs md:text-sm max-w-80 md:max-w-full mx-auto"
+                    data-aos="zoom-in"
+                    data-aos-delay={500}
+                  >
                     From web development to digital design, find freelancers
                     ready to tackle your project. Post your task today and
                     connect instantly with skilled professionals.
@@ -46,7 +47,7 @@ const TaskSlider = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-40">
               <a
                 href="#slide3"
                 className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
@@ -63,9 +64,9 @@ const TaskSlider = () => {
           </div>
           <div id="slide2" className="carousel-item relative w-full">
             <img src={sliderImg2} className="w-full  max-h-[450px] h-full" />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center space-y-4 bg-gray-900/50 p-8 rounded-2xl">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center space-y-4 md:bg-gray-900/50 p-8 rounded-2xl w-full md:max-w-lg">
               <h2
-                className="text-3xl font-bold"
+                className="text-xl md:text-2xl lg:text-3xl font-bold"
                 data-aos="fade-down"
                 data-aos-delay={300}
               >
@@ -79,7 +80,11 @@ const TaskSlider = () => {
                   delaySpeed={1000}
                 ></Typewriter>
               </h2>
-              <p data-aos="zoom-in" data-aos-delay={500}>
+              <p
+                className="text-xs md:text-sm max-w-80 md:max-w-full mx-auto"
+                data-aos="zoom-in"
+                data-aos-delay={500}
+              >
                 Browse available tasks and submit bids that match your skills
                 and budget. Whether you're a designer, developer, your next gig
                 is just a click away.
@@ -90,7 +95,7 @@ const TaskSlider = () => {
                 </button>
               </Link>
             </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-40">
               <a
                 href="#slide1"
                 className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"
@@ -107,9 +112,9 @@ const TaskSlider = () => {
           </div>
           <div id="slide3" className="carousel-item relative w-full">
             <img src={sliderImg3} className="w-full  max-h-[450px] h-full" />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center space-y-4 bg-gray-900/50 p-8 rounded-2xl">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center space-y-4 md:bg-gray-900/50 p-8 rounded-2xl w-full md:max-w-lg">
               <h2
-                className="text-3xl font-bold"
+                className="text-xl md:text-2xl lg:text-3xl font-bold"
                 data-aos="fade-down"
                 data-aos-delay={300}
               >
@@ -123,7 +128,11 @@ const TaskSlider = () => {
                   delaySpeed={1000}
                 ></Typewriter>
               </h2>
-              <p data-aos="zoom-in" data-aos-delay={500}>
+              <p
+                className="text-xs md:text-sm max-w-80 md:max-w-full mx-auto"
+                data-aos="zoom-in"
+                data-aos-delay={500}
+              >
                 Set clear deadlines and budgets for every task you post. Our
                 platform keeps everything organized so you can focus on results,
                 not reminders.
@@ -134,7 +143,7 @@ const TaskSlider = () => {
                 </button>
               </Link>
             </div>
-            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-40">
               <a
                 href="#slide2"
                 className="btn btn-circle border-0 shadow-none bg-green-500 hover:bg-transparent text-white"

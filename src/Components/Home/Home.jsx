@@ -3,11 +3,15 @@ import TaskSlider from "../TaskSlider/TaskSlider";
 import FeatureTask from "../FeatureTask/FeatureTask";
 import JobSearch from "../JobSearch/JobSearch";
 import Servises from "../Servises/Servises";
+// import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
   return (
     <div className="my-5">
+      {/* <Helmet>
+        <title>Home | JobPond</title>
+      </Helmet> */}
       {/* slider hero */}
       <section className="max-w-screen-xl mx-auto ">
         <TaskSlider></TaskSlider>

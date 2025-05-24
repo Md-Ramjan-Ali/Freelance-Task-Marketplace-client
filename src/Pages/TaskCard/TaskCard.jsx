@@ -13,18 +13,18 @@ const TaskCard = ({task}) => {
         <div className="card-body">
           <div className="flex gap-2 mb-2">
             <span>
-              <MdTaskAlt size={24} />
+              <MdTaskAlt size={24} className='text-orange-500'/>
             </span>
-            <h2 className="card-title text-xl font-bold text-primary">
+            <h2 className="card-title text-xl font-bold text-green-500">
               {title}
             </h2>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm">
             <span className="font-semibold">Category:</span> {category}
           </p>
           <div className="">
             <p className="font-semibold">Description:</p>
-            <p className="text-sm text-gray-700 mt-1 line-clamp-3">
+            <p className="text-sm mt-1 line-clamp-3">
               {description}
             </p>
           </div>

@@ -26,8 +26,8 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-10">
-      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-5">
+    <div className="max-w-4xl mx-auto my-5 lg:my-10 px-2 lg:px-0">
+      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-3 lg:p-5">
         <div className="text-center mb-10">
           <div
             className="flex justify-center items-center"
@@ -59,7 +59,7 @@ const TaskDetails = () => {
           <p className="text-center text-lg font-semibold">
             Your Bid for: {bidsCount} opportunities.
           </p>
-          <h2 className="card-title text-xl font-bold text-primary">
+          <h2 className="card-title text-xl font-bold">
             Job Title: {title}
           </h2>
           <p className="text-sm text-gray-600">

@@ -6,8 +6,8 @@ const useDarkSide = () => {
   localStorage.setItem("theme", theme);
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove(colorTheme);
-    root.classList.add(theme);
+    // root.classList.remove(colorTheme);
+    root.setAttribute('data-theme', theme);
     if (localStorage.theme == "dark") localStorage.removeItem("theme");
     else localStorage.setItem("theme", theme);
   }, [theme, colorTheme]);

@@ -24,10 +24,10 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                 <td className="font-medium">{task.title}</td>
                 <td>{task.deadline}</td>
                 <td>${task.budget}</td>
-                <td className="space-x-3">
+                <td className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-3 space-y-2 lg:space-y-0 w-fit">
                   {/* Update Button */}
                   <Link to={`/updatetask/${task._id}`}>
-                    <button className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-info">
+                    <button className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-info max-w-14 w-full">
                       Update
                     </button>
                   </Link>
@@ -35,7 +35,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                   {/* Delete Button */}
                   <button
                     onClick={() => handleTaskDelete(task._id)}
-                    className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white  btn-error"
+                    className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white  btn-error max-w-14 w-full"
                   >
                     Delete
                   </button>
@@ -47,7 +47,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                       setBidsCount(task);
                       document.getElementById("my_bids_modal").showModal();
                     }}
-                    className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-success"
+                    className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-success max-w-14 w-full"
                   >
                     Bids
                   </button>
@@ -62,13 +62,13 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
 
         <dialog
           id="my_bids_modal"
-          className="modal modal-bottom sm:modal-middle"
+          className="modal modal-middle  sm:modal-middle "
         >
           <div className="modal-box">
-            <h2 className="text-2xl font-semibold text-center mb-4">
+            <h2 className="text-2xl font-semibold text-center mb-4 text-green-500">
               All Bids for This Task
             </h2>
-            <div className="w-15 mx-auto border-1"></div>
+            <div className="w-15 mx-auto border-1 text-green-500"></div>
             <div className="mt-5 space-y-3">
               <h2 className=" text-lg text-center">
                 <span className="font-bold">Bids for:</span>{" "}

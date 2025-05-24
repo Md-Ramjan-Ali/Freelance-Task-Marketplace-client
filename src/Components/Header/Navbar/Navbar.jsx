@@ -64,8 +64,10 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="flex items-center cursor-pointer">
-          <img className="w-16 " src={Logo} alt="" />
-          <h2 className=" text-2xl font-bold text-green-500">JobPond</h2>
+          <img className="w-16 hidden md:flex" src={Logo} alt="" />
+          <h2 className=" text-2xl font-bold ">
+            <span className="text-green-500">Job</span>Pond
+          </h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

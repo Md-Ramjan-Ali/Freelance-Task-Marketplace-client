@@ -13,7 +13,6 @@
     "@tailwindcss/vite": "^4.1.7",
     "aos": "^2.3.4",
     "firebase": "^11.7.3",
-    "helmet": "^8.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-helmet-async": "^2.0.5",

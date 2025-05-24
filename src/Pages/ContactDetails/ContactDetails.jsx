@@ -4,53 +4,11 @@ import { FaEnvelope, FaHome, FaPhoneAlt } from 'react-icons/fa';
 const ContactDetails = () => {
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-10 gap-5 mt-10 p-5">
-        <div className=" lg:col-span-4">
-          <h2 className="text-2xl font-bold mb-4">Office Address</h2>
-
-          {/* Dhaka Office */}
-          <div className="flex items-start gap-3 mb-3">
-            <p>
-              <FaHome size={24} className="mt-1 text-xl text-gray-600" />
-            </p>
-            <p>
-              <strong>Dhaka Office:</strong> Level -7, Suite -2, A K Complex, 19
-              Green Road, Dhanmondi, Dhaka – 1205, Bangladesh
-            </p>
-          </div>
-
-          {/* Chittagong Office */}
-          <div className="flex items-start gap-3 mb-3">
-            <p>
-              <FaHome size={24} className="mt-1 text-xl text-gray-600" />
-            </p>
-            <p>
-              <strong>Chittagong Office:</strong> Agrabad Shopping Complex (2nd
-              Floor), 1742 Sk. Mujib Road, Agrabad, Chittagong – 4100
-            </p>
-          </div>
-
-          {/* Phone */}
-          <div className="flex items-center gap-3 mb-3">
-            <FaPhoneAlt className="text-xl text-gray-600" />
-            <p>
-              <strong>Phone:</strong> +88 01928294516
-            </p>
-          </div>
-
-          {/* Email */}
-          <div className="flex items-start gap-3 mb-3">
-            <FaEnvelope className="mt-1 text-xl text-gray-600" />
-            <div>
-              <p>
-                <strong>Email:</strong> gmramjanali88@gmail.com
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="max-w-screen-xl mx-auto mt-10 p-5">
+       
         {/* message field */}
-        <div className="lg:col-span-6">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">
+        <div className="">
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left">
             GET IN TOUCH WITH US
           </h2>
           <form className="space-y-6">

@@ -48,15 +48,14 @@ const UpdateTask = () => {
           <form onSubmit={handleUpdateTask}>
             {/* task title */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold">
                 Task Title
               </label>
               <input
                 name="title"
                 type="text"
                 defaultValue={title}
-                // value={formData.title}
-                // onChange={handleChange}
+             
                 className="input input-bordered w-full"
                 placeholder="Task Title"
                 required
@@ -65,14 +64,13 @@ const UpdateTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold">
                 Category{" "}
               </label>
               <select
                 name="category"
                 defaultValue={category}
-                // value={formData.category}
-                // onChange={handleChange}
+               
                 className="select select-bordered w-full"
                 required
               >
@@ -86,14 +84,13 @@ const UpdateTask = () => {
 
             {/* description */}
             <fieldset className="fieldset ">
-              <label className="label text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold">
                 Description
               </label>
               <textarea
                 name="description"
                 defaultValue={description}
-                // value={formData.description}
-                // onChange={handleChange}
+                
                 className="textarea textarea-bordered w-full"
                 placeholder="Describe what needs to be done"
                 required
@@ -102,15 +99,14 @@ const UpdateTask = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/* deadline */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   Deadline
                 </label>
                 <input
                   type="date"
                   name="deadline"
                   defaultValue={deadline}
-                  // value={formData.deadline}
-                  // onChange={handleChange}
+                 
                   className="input input-bordered w-full"
                   required
                 />
@@ -118,15 +114,14 @@ const UpdateTask = () => {
 
               {/* Budget */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   Budget
                 </label>
                 <input
                   type="number"
                   name="budget"
                   defaultValue={budget}
-                  // value={formData.budget}
-                  // onChange={handleChange}
+                
                   className="input input-bordered w-full"
                   placeholder="Budget"
                   required
@@ -135,31 +130,31 @@ const UpdateTask = () => {
 
               {/* User Email */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   User Email
                 </label>
                 <input
                   type="email"
                   name="email"
                   defaultValue={email}
-                  // value={user.email}
+                 
                   readOnly
-                  className="input input-bordered w-full bg-gray-100 cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed"
                 />
               </fieldset>
 
               {/* User Name */}
               <fieldset className="fieldset ">
-                <label className="label text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold">
                   User Name
                 </label>
                 <input
                   type="text"
                   name="name"
                   defaultValue={name}
-                  // value={user.displayName}
+                  
                   readOnly
-                  className="input input-bordered w-full bg-gray-100 cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>
