@@ -5,8 +5,8 @@
 ## 🌐 Live Site
 
 🔗 [Live Site URL](https://freelance-task-marketpla-af2da.web.app/)  
-🔗 [Client Repository](https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-ramjan88)  
-🔗 [Server Repository](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-ramjan88)
+🔗 [Client Repository](https://github.com/Md-Ramjan-Ali/Freelance-Task-Marketplace-client)  
+🔗 [Server Repository](https://github.com/Md-Ramjan-Ali/Freelance-Task-Marketplace-server)
 
 ---
 
