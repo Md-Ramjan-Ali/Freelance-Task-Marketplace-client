@@ -30,7 +30,7 @@
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** Firebase Auth
-- **Deployment:** Netlify (Client) + Vercel (Server)
+- **Deployment:** Firebase (Client) + Vercel (Server)
 
 ---
 
