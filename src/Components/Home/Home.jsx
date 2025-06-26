@@ -4,6 +4,7 @@ import JobSearch from "../JobSearch/JobSearch";
 import Servises from "../Servises/Servises";
 import { Helmet } from "react-helmet-async";
 import Slider from "../TaskSlider/Slider";
+import PopularCategories from "../PopularCategories/PopularCategories";
 
 
 const Home = () => {
@@ -17,11 +18,14 @@ const Home = () => {
         <Slider></Slider>
       </section>
 
-
-
       {/* feature task section */}
       <section className="max-w-screen-xl mx-auto mt-10">
         <FeatureTask></FeatureTask>
+      </section>
+
+      {/* popular */}
+      <section className="max-w-screen-xl mx-auto">
+        <PopularCategories></PopularCategories>
       </section>
 
       {/* job search */}
@@ -33,8 +37,6 @@ const Home = () => {
       <section className="max-w-screen-xl mx-auto my-20">
         <Servises></Servises>
       </section>
-
-      
     </div>
   );
 };

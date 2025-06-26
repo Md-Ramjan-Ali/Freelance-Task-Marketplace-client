@@ -15,7 +15,7 @@ const TaskCard = ({ task }) => {
   } = task;
   return (
     <div
-      className="flex flex-col justify-between max-w-md bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden "
+      className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden "
       data-aos="zoom-in-up"
       data-aos-easing="linear"
     >
@@ -27,7 +27,7 @@ const TaskCard = ({ task }) => {
             year: "numeric",
           })}
         </p>
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+        <h2 className="text-xl font-medium text-gray-600 dark:text-white">
           {title}
         </h2>
 
