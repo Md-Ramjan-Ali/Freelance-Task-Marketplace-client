@@ -1,12 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
 import cardImg from "../../assets/cardImage.png";
+import { Link } from "react-router";
 
-const TaskCard = ({task}) => {
-  const { _id,name, title, category, description, deadline, budget, clientImage } =
-    task;
+const FeatureTaskCard = ({ task }) => {
+  const {
+    name,
+    title,
+    category,
+    deadline,
+    budget,
+    description,
+    clientImage,
+    _id,
+  } = task;
   return (
- <div
+    <div
       className="flex flex-col justify-between max-w-md bg-white rounded-xl shadow-md overflow-hidden "
       data-aos="zoom-in-up"
       data-aos-easing="linear"
@@ -51,4 +59,4 @@ const TaskCard = ({task}) => {
   );
 };
 
-export default TaskCard;
+export default FeatureTaskCard;

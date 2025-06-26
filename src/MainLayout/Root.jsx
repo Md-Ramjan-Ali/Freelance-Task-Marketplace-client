@@ -11,7 +11,7 @@ const Root = () => {
     <div className="dark:bg-gray-900">
       <Navbar></Navbar>
 
-      <main>{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>
+      <main className="bg-base-200">{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>
       <footer>
         <Footer></Footer>
       </footer>

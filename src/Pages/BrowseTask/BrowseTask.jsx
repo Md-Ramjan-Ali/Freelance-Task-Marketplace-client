@@ -8,7 +8,7 @@ const BrowseTask = () => {
   const taskData=useLoaderData()
 
   return (
-    <div className="max-w-screen-xl mx-auto my-10">
+    <div className="max-w-screen-xl mx-auto py-10">
        <Helmet>
               <title>Browse Task | JobPond</title>
             </Helmet>

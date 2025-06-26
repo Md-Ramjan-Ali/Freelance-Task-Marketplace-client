@@ -67,7 +67,7 @@ const Slider = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover brightness-50"
               />
               <div className="absolute inset-0  flex items-center justify-center text-white px-4">
                 <div className="text-center max-w-2xl space-y-8  rounded-2xl">

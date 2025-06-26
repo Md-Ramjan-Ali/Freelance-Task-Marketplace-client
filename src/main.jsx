@@ -8,12 +8,29 @@ import AuthProvider from "./AuthContext/AuthProvider.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./AuthContext/ThemeContext.jsx";
 
+//
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+function AosProvider({ children }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+  return children;
+}
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>
       <AuthProvider>
         <ThemeProvider>
-          <RouterProvider router={router} />
+          <AosProvider>
+            <RouterProvider router={router} />
+          </AosProvider>
         </ThemeProvider>
       </AuthProvider>
     </HelmetProvider>

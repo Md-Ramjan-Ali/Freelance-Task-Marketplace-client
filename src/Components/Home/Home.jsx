@@ -1,5 +1,4 @@
 import React from "react";
-import TaskSlider from "../TaskSlider/TaskSlider";
 import FeatureTask from "../FeatureTask/FeatureTask";
 import JobSearch from "../JobSearch/JobSearch";
 import Servises from "../Servises/Servises";
@@ -15,7 +14,6 @@ const Home = () => {
       </Helmet>
       {/* slider hero */}
       <section className=" ">
-        {/* <TaskSlider></TaskSlider> */}
         <Slider></Slider>
       </section>
 
