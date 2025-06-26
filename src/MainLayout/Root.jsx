@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 const Root = () => {
   const { state } = useNavigation();
   return (
-    <div>
+    <div className="dark:bg-gray-900">
       <Navbar></Navbar>
 
       <main>{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>

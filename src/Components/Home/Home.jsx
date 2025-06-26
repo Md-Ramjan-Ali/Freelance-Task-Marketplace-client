@@ -4,18 +4,22 @@ import FeatureTask from "../FeatureTask/FeatureTask";
 import JobSearch from "../JobSearch/JobSearch";
 import Servises from "../Servises/Servises";
 import { Helmet } from "react-helmet-async";
+import Slider from "../TaskSlider/Slider";
 
 
 const Home = () => {
   return (
-    <div className="my-5">
+    <div className="space-y-5">
       <Helmet>
         <title>Home | JobPond</title>
       </Helmet>
       {/* slider hero */}
-      <section className="max-w-screen-xl mx-auto ">
-        <TaskSlider></TaskSlider>
+      <section className=" ">
+        {/* <TaskSlider></TaskSlider> */}
+        <Slider></Slider>
       </section>
+
+
 
       {/* feature task section */}
       <section className="max-w-screen-xl mx-auto mt-10">

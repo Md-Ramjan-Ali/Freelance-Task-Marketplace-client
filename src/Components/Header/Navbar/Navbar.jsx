@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../../AuthContext/AuthContext";
 import Logo from "../../../assets/logo.png";
 import { Tooltip } from "react-tooltip";
-import ToggleTheme from "../../ToggleTheme/ToggleTheme";
 import Swal from "sweetalert2";
+import DarkToggler from "../../DarkToggler/DarkToggler";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
@@ -26,10 +26,10 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/addtask">Add Task</NavLink>
+        <NavLink to="/browsetask">Browse Tasks</NavLink>
       </li>
       <li>
-        <NavLink to="/browsetask">Browse Tasks</NavLink>
+        <NavLink to="/addtask">Add Task</NavLink>
       </li>
       <li>
         <NavLink to="/myposttask">My Posted Tasks</NavLink>
@@ -37,7 +37,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-base-100 shadow-sm px-10 sticky top-0 z-50">
+    <nav className="navbar bg-base-100/50 shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white backdrop-blur">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -75,7 +75,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-3">
         <div className="card items-center">
-          <ToggleTheme></ToggleTheme>
+          <DarkToggler></DarkToggler>
         </div>
         <div
           className="cursor-pointer"

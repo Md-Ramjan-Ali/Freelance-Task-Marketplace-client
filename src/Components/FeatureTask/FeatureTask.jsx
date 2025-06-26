@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { MdNewReleases } from "react-icons/md";
 import { Link } from "react-router";
+import { Typewriter } from "react-simple-typewriter";
 
 const FeatureTask = () => {
   const [featuredTasks, setFeatureTask] = useState([]);
@@ -20,8 +21,16 @@ const FeatureTask = () => {
     <div>
       {/* feature heading */}
       <div className="">
-        <h2 className="text-3xl font-bold mb-3 text-center text-green-500">
-          Featured Tasks
+        <h2 className="text-3xl font-semibold mb-3 text-center text-green-500">
+          <Typewriter
+            words={["Featured Tasks"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          ></Typewriter>
         </h2>
         <div className="border-1 w-15 mx-auto mb-4"></div>
 

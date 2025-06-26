@@ -8,10 +8,10 @@ import { Typewriter } from "react-simple-typewriter";
 const TaskSlider = () => {
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto p-3 lg:p-0">
-        <div className="carousel w-full  my-3 rounded-2xl">
-          <div id="slide1" className="carousel-item relative w-full">
-            <img src={sliderImg1} className="w-full max-h-[450px] h-full " />
+      <div className="w-full">
+        <div className="carousel w-full h-[70vh]">
+          <div id="slide1" className="carousel-item h-full relative w-full">
+            <img src={sliderImg1} className="w-full h-full " />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-20 w-full md:max-w-lg">
               <div className="md:bg-gray-900/50 p-5 rounded-2xl ">
                 <div className="text-white text-center space-y-4">
