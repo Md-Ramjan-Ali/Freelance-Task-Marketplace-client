@@ -31,7 +31,7 @@ const FeatureTask = () => {
     <div>
       {/* feature heading */}
       <div className="">
-        <h2 className="text-3xl font-semibold mb-3 text-center text-green-500">
+        <h2 className="text-3xl font-semibold mb-3 text-center text-green-500 dark:text-white">
           <Typewriter
             words={["Featured Job Tasks"]}
             loop={true}
@@ -45,7 +45,7 @@ const FeatureTask = () => {
         <div className="border-1 w-15 mx-auto mb-4"></div>
 
         <p
-          className="text-xl  text-center"
+          className="text-xl  text-center dark:text-white"
           data-aos="zoom-in"
           data-aos-easing="linear"
         >

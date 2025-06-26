@@ -20,7 +20,7 @@ const Footer = () => {
   };
   return (
     <div>
-      <footer className="bg-[#1e293b] text-white py-10 mt-20">
+      <footer className="bg-[#1e293b] text-white py-10">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 ">
           {/* Left: Text and Image */}
           <div
