@@ -57,7 +57,7 @@ const TaskCard = ({ task }) => {
         </div>
         <Link to={`/taskdetails/${_id}`}>
           <button className="bg-white dark:bg-gray-500 dark:text-white text-sm transition text-gray-800 font-medium px-4 py-2 rounded-md hover:bg-green-500 hover:text-white">
-            View Job
+            See more
           </button>
         </Link>
       </div>

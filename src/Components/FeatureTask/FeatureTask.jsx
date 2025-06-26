@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { MdNewReleases } from "react-icons/md";
+import { MdNewReleases, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 import Loading from "../../Loading/Loading";
 import FeatureTaskCard from "./FeatureTaskCard";
+import axios from "axios";
 
 const FeatureTask = () => {
-  // const [loading,setLoading]=useState(true)
+  const [loading,setLoading]=useState(true)
   const [featuredTasks, setFeatureTask] = useState([]);
 
   useEffect(() => {
-    fetch(
+    axios.get(
       "https://freelance-task-marketplace-server-lyart.vercel.app/tasks/featuretasks"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setFeatureTask(data);
-        // setLoading(false)
+    ).then((result) => {
+        setFeatureTask(result.data);
+        setLoading(false)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  // if(loading){
-  //   return <Loading></Loading>
-  // }
+  if(loading){
+    return <Loading></Loading>
+  }
 
   return (
     <div>
@@ -58,6 +57,17 @@ const FeatureTask = () => {
         {featuredTasks.map((task) => (
           <FeatureTaskCard key={task._id} task={task}></FeatureTaskCard>
         ))}
+      </div>
+
+      <div className="text-center  mt-8">
+        <Link to="browsetask">
+          <button className="btn p-7 text-[1rem] dark:bg-gray-800 font-semibold text-gray-600 dark:text-white">
+            <span>Explore More Projects</span>
+            <span>
+              <MdOutlineKeyboardArrowRight size={24} />
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );

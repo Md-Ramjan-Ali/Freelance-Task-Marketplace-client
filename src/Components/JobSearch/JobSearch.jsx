@@ -5,11 +5,11 @@ import { Link } from 'react-router';
 
 const JobSearch = () => {
   return (
-    <section className=" card bg-base-200 shadow-xl  transition pt-16 pb-28 px-10 md:px-30 flex flex-col lg:flex-row items-center justify-between">
+    <section className=" card bg-base-200 dark:bg-gray-800 shadow-xl  transition pt-16 pb-28 px-10 md:px-30 flex flex-col lg:flex-row items-center justify-between">
       {/* Left Content */}
       <div className="lg:w-1/2 mb-12 lg:mb-0">
         <h2
-          className="text-2xl md:text-4xl font-bold mb-6 text-center md:text-left"
+          className="text-2xl md:text-4xl font-bold mb-6 text-center md:text-left dark:text-white"
           data-aos="zoom-in-down"
           data-aos-easing="linear"
           data-aos-duration="1000"
@@ -29,7 +29,7 @@ const JobSearch = () => {
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-3">
               <span className="text-green-500 text-xl">✔</span>
-              <span>{item}</span>
+              <span className='dark:text-white'>{item}</span>
             </li>
           ))}
         </ul>

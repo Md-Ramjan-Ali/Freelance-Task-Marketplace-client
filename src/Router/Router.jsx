@@ -33,10 +33,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/browsetask",
-        loader: () =>
-          fetch(
-            "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
-          ),
+        // loader: () =>
+        //   fetch(
+        //     "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
+        //   ),
         Component: BrowseTask,
       },
       {

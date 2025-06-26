@@ -30,7 +30,7 @@ const Home = () => {
       </section>
 
       {/* service section */}
-      <section className="max-w-screen-xl mx-auto mt-20">
+      <section className="max-w-screen-xl mx-auto my-20">
         <Servises></Servises>
       </section>
 
