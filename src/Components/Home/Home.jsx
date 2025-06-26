@@ -5,11 +5,12 @@ import Servises from "../Servises/Servises";
 import { Helmet } from "react-helmet-async";
 import Slider from "../TaskSlider/Slider";
 import PopularCategories from "../PopularCategories/PopularCategories";
+import ClientTestimonials from "../ClientTestimonials/ClientTestimonials";
 
 
 const Home = () => {
   return (
-    <div className="space-y-5">
+    <div className="">
       <Helmet>
         <title>Home | JobPond</title>
       </Helmet>
@@ -34,8 +35,9 @@ const Home = () => {
       </section>
 
       {/* service section */}
-      <section className="max-w-screen-xl mx-auto my-20">
-        <Servises></Servises>
+      <section className=" ">
+        {/* <Servises></Servises> */}
+        <ClientTestimonials></ClientTestimonials>
       </section>
     </div>
   );

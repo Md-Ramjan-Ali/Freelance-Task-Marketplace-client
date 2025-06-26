@@ -15,9 +15,10 @@ const FeatureTaskCard = ({ task }) => {
   } = task;
   return (
     <div
-      className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden "
+      className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden transform transition-transform duration-700 ease-in-out hover:scale-105"
       data-aos="zoom-in-up"
       data-aos-easing="linear"
+      
     >
       <div className="space-y-4 p-5 ">
         <p className="text-sm text-gray-500 dark:text-white">

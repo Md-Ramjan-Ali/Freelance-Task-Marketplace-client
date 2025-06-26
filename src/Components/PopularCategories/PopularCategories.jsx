@@ -29,13 +29,13 @@ const PopularCategories = () => {
     <div className="flex flex-col mt-20 px-2 lg:px-0">
       <div className="space-y-3 lg:max-w-[50%] w-full px-3 lg:px-2  mb-5">
         <p
-          className="text-[1.2rem] font-semibold"
+          className="text-[1.2rem] font-semibold dark:text-white"
           data-aos="zoom-in-down"
           data-aos-easing="linear"
           data-aos-duration="1000"
         >
           <Typewriter
-            words={["Boost Your Working Flow"]}
+            words={["Empower Your Freelance Journey."]}
             loop={true}
             cursor
             cursorStyle="|"
@@ -44,22 +44,25 @@ const PopularCategories = () => {
             delaySpeed={1000}
           ></Typewriter>
         </p>
+
         <h2
-          className="md:text-xl lg:text-3xl font-bold"
+          className="md:text-xl lg:text-3xl font-bold dark:text-white"
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
-          Your One-Stop Online Marketplace for Everything You Need
+          Post Tasks or Get Hired — All in One Platform
         </h2>
+
         <p
+          className="dark:text-white"
           data-aos="zoom-in-up"
           data-aos-easing="linear"
           data-aos-duration="1800"
         >
-          Your premier online marketplace. Find quality products and services,
-          connect with trusted sellers, and enjoy a seamless shopping experience
-          today.
+          Whether you're looking to hire skilled freelancers or searching for
+          your next project, our marketplace connects talent with
+          opportunity—quickly, easily, and securely.
         </p>
       </div>
 
@@ -82,11 +85,11 @@ const PopularCategories = () => {
         >
           {categories.map((category, idx) => (
             <SwiperSlide className="rounded-xl " key={idx}>
-              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group relative w-full h-[280px] md:h-[320px] lg:h-[380px]">
+              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group relative w-full h-[280px] md:h-[320px] lg:h-[380px] cursor-pointer">
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-full object-cover brightness-50 group-hover:scale-105 transition duration-500 rounded-xl"
+                  className="w-full h-full object-cover brightness-50 group-hover:scale-110 transition duration-500 rounded-xl"
                 />
                 <div className="absolute bottom-0 pl-5 pb-5 text-center">
                   <p className="text-md font-semibold  text-white">

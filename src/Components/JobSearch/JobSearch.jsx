@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const JobSearch = () => {
   return (
-    <section className="card bg-base-200 dark:bg-gray-800 shadow-xl  transition pt-16 pb-28 px-10 md:px-30 flex flex-col lg:flex-row items-center justify-between">
+    <section className="card bg-base-200 dark:bg-gray-800 shadow-sm  transition pt-16 pb-28 px-10 md:px-30 flex flex-col lg:flex-row items-center justify-between">
       {/* Left Content */}
       <div className="lg:w-1/2 mb-12 lg:mb-0">
         <h2
