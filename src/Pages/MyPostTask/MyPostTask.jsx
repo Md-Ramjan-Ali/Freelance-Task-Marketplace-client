@@ -1,23 +1,31 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
-import { useLoaderData } from "react-router";
 import MyPostedTasksTable from "../MyPostedTasksTable/MyPostedTasksTable";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import Loading from "../../Loading/Loading";
 
 const MyPostTask = () => {
   const { user } = use(AuthContext);
+  const [taskData, setTaskData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const initialTaskData = useLoaderData();
-  const [taskData, setTaskData] = useState(initialTaskData);
-
-  const myTaskData = taskData.filter((task) => task.email === user.email);
-
- 
+  useEffect(() => {
+    axios
+      .get(
+        `https://freelance-task-marketplace-server-lyart.vercel.app/tasks?email=${user.email}`
+      )
+      .then((res) => {
+        setTaskData(res.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user.email]);
 
   const handleTaskDelete = (id) => {
-
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -51,6 +59,9 @@ const MyPostTask = () => {
     });
   };
 
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="max-w-screen-xl mx-auto my-10">
       <Helmet>
@@ -58,7 +69,7 @@ const MyPostTask = () => {
       </Helmet>
       <div className="">
         <MyPostedTasksTable
-          tasks={myTaskData}
+          tasks={taskData}
           handleTaskDelete={handleTaskDelete}
         ></MyPostedTasksTable>
       </div>
