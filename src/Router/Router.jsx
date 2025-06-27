@@ -13,6 +13,9 @@ import Privacy from "../Pages/Privacy/Privacy";
 import Terms from "../Pages/Terms/Terms";
 import TaskDetails from "../Pages/TaskDetails/TaskDetails";
 import UpdateTask from "../Pages/UpdateTask/UpdateTask";
+import DashboardLayout from "../MainLayout/DashboardLayout";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import DashBrowseTask from "../Pages/Dashboard/DashBrowseTask";
 
 const router = createBrowserRouter([
   {
@@ -24,32 +27,8 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "/addtask",
-        element: (
-          <PrivetRouter>
-            <AddTask></AddTask>
-          </PrivetRouter>
-        ),
-      },
-      {
         path: "/browsetask",
-        // loader: () =>
-        //   fetch(
-        //     "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
-        //   ),
         Component: BrowseTask,
-      },
-      {
-        path: "/myposttask",
-        loader: () =>
-          fetch(
-            "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
-          ),
-        element: (
-          <PrivetRouter>
-            <MyPostTask></MyPostTask>
-          </PrivetRouter>
-        ),
       },
       {
         path: "/taskdetails/:id",
@@ -64,7 +43,57 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updatetask/:id",
+        path: "/terms",
+        Component: Terms,
+      },
+      {
+        path: "/privacy",
+        Component: Privacy,
+      },
+    ],
+  },
+  {
+    path: "/dash",
+    Component: DashboardLayout,
+    children: [
+      {
+        path: "/dash/dashboard",
+        element: (
+          <PrivetRouter>
+            <Dashboard></Dashboard>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/dashBrowseTask",
+        element: (
+          <PrivetRouter>
+            <DashBrowseTask></DashBrowseTask>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/addtask",
+        element: (
+          <PrivetRouter>
+            <AddTask></AddTask>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/myposttask",
+        loader: () =>
+          fetch(
+            "https://freelance-task-marketplace-server-lyart.vercel.app/tasks"
+          ),
+        element: (
+          <PrivetRouter>
+            <MyPostTask></MyPostTask>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/updatetask/:id",
         loader: ({ params }) =>
           fetch(
             `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${params.id}`
@@ -76,12 +105,16 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/terms",
-        Component: Terms,
-      },
-      {
-        path: "/privacy",
-        Component: Privacy,
+        path: "/dash/taskdetails/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://freelance-task-marketplace-server-lyart.vercel.app/tasks/${params.id}`
+          ),
+        element: (
+          <PrivetRouter>
+            <TaskDetails></TaskDetails>
+          </PrivetRouter>
+        ),
       },
     ],
   },

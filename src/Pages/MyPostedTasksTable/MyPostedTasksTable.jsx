@@ -35,7 +35,7 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
                 <td>${task.budget}</td>
                 <td className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-3 space-y-2 lg:space-y-0 w-fit">
                   {/* Update Button */}
-                  <Link to={`/updatetask/${task._id}`}>
+                  <Link to={`/dash/updatetask/${task._id}`}>
                     <button className="btn btn-xs btn-outline hover:bg-green-700 hover:text-white btn-info max-w-14 w-full">
                       Update
                     </button>

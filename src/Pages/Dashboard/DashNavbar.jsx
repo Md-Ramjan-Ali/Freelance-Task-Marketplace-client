@@ -1,12 +1,11 @@
 import React, { use } from "react";
-import { Link, NavLink } from "react-router";
-import { AuthContext } from "../../../AuthContext/AuthContext";
-import Logo from "../../../assets/logo.png";
+import { Link } from "react-router";
 import { Tooltip } from "react-tooltip";
 import Swal from "sweetalert2";
-import DarkToggler from "../../DarkToggler/DarkToggler";
+import { AuthContext } from "../../AuthContext/AuthContext";
+import DarkToggler from "../../Components/DarkToggler/DarkToggler";
 
-const Navbar = () => {
+const DashNavbar = () => {
   const { user, logOUt } = use(AuthContext);
 
   const handleLogOut = () => {
@@ -20,25 +19,8 @@ const Navbar = () => {
     });
   };
 
-  const links = (
-    <>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/browsetask">Browse Tasks</NavLink>
-      </li>
-      {user && (
-        <>
-          <li>
-            <NavLink to="/dash/dashboard">Dashboard</NavLink>
-          </li>
-        </>
-      )}
-    </>
-  );
   return (
-    <nav className="navbar bg-base-100/50 shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white backdrop-blur">
+    <nav className="navbar bg-transparent px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white backdrop-blur">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -60,19 +42,12 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-            {links}
-          </ul>
+          ></ul>
         </div>
-        <Link to="/" className="flex items-center cursor-pointer">
-          <img className="w-16 hidden md:flex" src={Logo} alt="" />
-          <h2 className=" text-2xl font-bold ">
-            <span className="text-green-500">Job</span>Pond
-          </h2>
-        </Link>
+        
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-8">{links}</ul>
+        <ul className="flex gap-8"></ul>
       </div>
       <div className="navbar-end gap-3">
         <div className="card items-center">
@@ -122,4 +97,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default DashNavbar;
