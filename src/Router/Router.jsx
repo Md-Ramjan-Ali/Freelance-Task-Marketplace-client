@@ -16,6 +16,8 @@ import UpdateTask from "../Pages/UpdateTask/UpdateTask";
 import DashboardLayout from "../MainLayout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import DashBrowseTask from "../Pages/Dashboard/DashBrowseTask";
+import Contact from "../Pages/Contact/Contact";
+import About from "../Pages/About/About";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
             <TaskDetails></TaskDetails>
           </PrivetRouter>
         ),
+      },
+      {
+        path:'/contact',
+        Component: Contact
+      },
+      {
+        path: '/about',
+        Component: About
       },
       {
         path: "/terms",
