@@ -37,16 +37,16 @@ const BrowseTask = () => {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto py-10">
+    <div className="max-w-screen-xl mx-auto py-5">
       <Helmet>
         <title>Browse Task | JobPond</title>
       </Helmet>
 
-      {/* 🔽 Filter & Sort Controls */}
-      <div className="mb-6 flex flex-col md:flex-row justify-between gap-4">
+      {/* Filter & Sort deadline and search */}
+      <div className="mb-6 flex flex-col md:flex-row justify-between gap-4 bg-white px-5 py-10 rounded-xl shadow">
         <div className="">
           <select
-            className="select select-bordered focus:outline-0"
+            className="select select-bordered focus:outline-0 "
             onChange={(e) => setFilterCategory(e.target.value)}
             value={filterCategory}
           >
@@ -80,7 +80,6 @@ const BrowseTask = () => {
             <option value="asc">Oldest to Newest</option>
           </select>
         </div>
-        {/* filter by deadline */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2 lg:px-0">
