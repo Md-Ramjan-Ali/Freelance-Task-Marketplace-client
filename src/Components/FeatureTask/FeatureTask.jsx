@@ -61,7 +61,7 @@ const FeatureTask = () => {
 
       <div className="text-center  mt-8">
         <Link to="browsetask">
-          <button className="btn p-7 text-[1rem] dark:bg-gray-800 font-semibold text-gray-600 dark:text-white">
+          <button className="btn bg-white hover:bg-green-600 hover:text-white p-7 text-[1rem] dark:bg-gray-800 font-semibold text-gray-600 dark:text-white">
             <span>Explore More Projects</span>
             <span>
               <MdOutlineKeyboardArrowRight size={24} />

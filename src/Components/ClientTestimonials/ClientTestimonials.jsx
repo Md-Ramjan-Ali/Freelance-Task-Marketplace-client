@@ -103,13 +103,13 @@ const ClientTestimonials = () => {
           <div className="flex justify-center md:justify-start items-end gap-4 mt-2">
             <button
               onClick={prevSlide}
-              className="btn btn-ghost rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="btn btn-ghost rounded-md dark:text-white hover:bg-green-500 hover:text-white"
             >
               <MdOutlineArrowBackIos size={28} />
             </button>
             <button
               onClick={nextSlide}
-              className="btn btn-ghost rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="btn btn-ghost rounded-md dark:text-white hover:bg-green-500 hover:text-white"
             >
               <MdArrowForwardIos size={28} />
             </button>
