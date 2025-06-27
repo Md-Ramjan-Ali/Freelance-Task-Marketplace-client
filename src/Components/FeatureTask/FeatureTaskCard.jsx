@@ -15,7 +15,7 @@ const FeatureTaskCard = ({ task }) => {
   } = task;
   return (
     <div
-      className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden transform transition-transform duration-700 ease-in-out hover:scale-105"
+      className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-xl shadow-md overflow-hidden"
       data-aos="zoom-in-up"
       data-aos-easing="linear"
       
