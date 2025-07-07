@@ -16,6 +16,5 @@
 
 nav ul .active {
   border-bottom: 2px solid green;
-  color: green;
   padding-bottom: 5px;
 }

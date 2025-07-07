@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import axios from "axios";
-import img from '../../assets/webdevCategory.jpg'
+import img from "../../assets/webdevCategory.jpg";
+import { Typewriter } from "react-simple-typewriter";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -26,35 +27,43 @@ const Dashboard = () => {
   }, [user.email]);
 
   return (
-    <div className="">
+    <div className="" data-aos="zoom-in-up" data-aos-easing="linear">
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-center dark:text-white">
-          Welcome, {user.displayName}
+        <h2 className="text-2xl font-bold text-center text-green-600  dark:text-white py-6">
+          <Typewriter
+            words={[`Welcome, ${user.displayName}`]}
+            loop={true}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          ></Typewriter>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white dark:bg-gray-700 dark:text-white rounded shadow h-[250px] text-center md:space-y-10">
-            <h2 className="text-gray-500 dark:text-white text-xl">
+          <div className="p-6 bg-green-400 dark:bg-gray-700 dark:text-white rounded-xl shadow h-[250px] text-center md:space-y-10">
+            <h2 className="text-white font-semibold dark:text-white text-xl">
               Total Job Tasks Available
             </h2>
-            <h3 className="text-3xl ">
+            <h3 className="text-3xl text-white">
               <span className="font-bold">{totalItems.length}</span> Tasks
             </h3>
           </div>
 
-          <div className="p-6 bg-white dark:bg-gray-700 dark:text-white rounded shadow h-[250px] text-center md:space-y-10">
-            <h2 className="text-gray-500 dark:text-white text-xl">
+          <div className="p-6 bg-green-500 text-white dark:bg-gray-700 dark:text-white rounded-xl shadow h-[250px] text-center md:space-y-10">
+            <h2 className="text-white font-semibold dark:text-white text-xl">
               My post Task Available
             </h2>
-            <h3 className="text-3xl ">
-              <span className="font-bold">{myItems.length}</span> Tasks
+            <h3 className="text-3xl text-white">
+              <span className="font-bold ">{myItems.length}</span> Tasks
             </h3>
           </div>
 
-          <div className="p-6 bg-white dark:bg-gray-700 dark:text-white rounded shadow h-[250px] text-center md:space-y-10">
-            <h2 className="text-gray-500 dark:text-white text-xl">
+          <div className="p-6 bg-green-600 dark:bg-gray-700 dark:text-white rounded-xl shadow h-[250px] text-center md:space-y-10">
+            <h2 className="text-white font-semibold dark:text-white text-xl">
               Total Job Category
             </h2>
-            <h3 className="text-3xl ">
+            <h3 className="text-3xl text-white">
               <span className="font-bold">4</span> Category
             </h3>
           </div>
@@ -64,7 +73,11 @@ const Dashboard = () => {
       <div className="card bg-base-100 dark:bg-gray-700 dark:text-white shadow-sm mt-5">
         <div className="">
           <figure>
-            <img className="w-full h-[400px] object-cover" src={img} alt="" />
+            <img
+              className="w-full h-[400px] rounded-xl-t-xl object-cover"
+              src={img}
+              alt=""
+            />
           </figure>
         </div>
         <div className="flex justify-center -mt-16 ">

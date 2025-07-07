@@ -44,10 +44,14 @@ const DashBrowseTask = () => {
       </Helmet>
 
       {/* Filter & Sort deadline and search */}
-      <div className="mb-6 flex flex-col md:flex-row justify-between gap-4 bg-white px-5 py-10 rounded-xl shadow dark:shadow-2xl dark:bg-gray-800">
+      <div
+        className="mb-6 flex flex-col items-center md:flex-row justify-between gap-4 bg-white dark:bg-gray-800 px-5 py-10 rounded-xl shadow"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+      >
         <div className="">
           <select
-            className="select select-bordered focus:outline-0 dark:bg-gray-800"
+            className="select select-bordered focus:outline-0 dark:bg-gray-800 dark:text-white dark:border-1 dark:border-white"
             onChange={(e) => setFilterCategory(e.target.value)}
             value={filterCategory}
           >
@@ -66,19 +70,19 @@ const DashBrowseTask = () => {
             placeholder="Search by title..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className=" input input-bordered focus:outline-0 rounded-full w-full pl-10 dark:bg-gray-800"
+            className=" input input-bordered focus:outline-0 rounded-full w-full pl-10 dark:bg-gray-800 dark:text-white dark:border-1 dark:border-white py-6"
           />
-          <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20">
+          <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20 dark:text-white">
             <CiSearch />
           </span>
           <select
-            className="absolute right-0 select border-0 focus:outline-0 bg-transparent focus:bg-transparent rounded-full w-fit z-50 focus:shadow-0"
+            className="absolute right-2 dark:bg-gray-800 dark:text-white select border-0 focus:outline-0 bg-transparent focus:bg-transparent rounded-full w-fit z-50 focus:shadow-0 my-1"
             onChange={(e) => setSortOrder(e.target.value)}
             value={sortOrder}
           >
-            <option value="">Sort by Date</option>
-            <option value="desc">Newest to Oldest</option>
-            <option value="asc">Oldest to Newest</option>
+            <option className="text-black" value="">Sort by Date</option>
+            <option className="text-black" value="desc">Newest to Oldest</option>
+            <option className="text-black" value="asc">Oldest to Newest</option>
           </select>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const EmptyTask = () => {
   return (
     <div className="max-w-screen-xl mx-auto min-h-[60vh] flex items-center justify-center px-4">
-      <div className="card w-full md:w-2/3 lg:w-1/2 bg-base-100 shadow-md text-center">
+      <div className="card w-full md:w-2/3 lg:w-1/2 bg-base-100 dark:bg-gray-800 dark:text-white shadow-md text-center">
         <div className="card-body items-center">
           <FaTasks className="text-6xl text-orange-500 mb-4 " />
           <h2 className="text-2xl font-semibold">No Tasks Available</h2>

@@ -2,9 +2,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="bg-gray-50 px-6 md:px-16 py-12 text-gray-800 dark:bg-gray-900 dark:text-white space-y-8">
+    <div
+      className="max-w-screen-xl mx-auto py-20 text-gray-800 dark:bg-gray-900 dark:text-white space-y-8"
+      data-aos="zoom-in-up"
+      data-aos-easing="linear"
+    >
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold text-green-500 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-green-500 dark:text-white mb-4">
           Who We Are & What Drives Us
         </h2>
         <p className="text-lg leading-relaxed font-medium text-gray-700 dark:text-gray-300">
@@ -31,7 +35,7 @@ const About = () => {
       </div>
 
       <div>
-        <h3 className="text-2xl font-semibold text-green-500 mb-3">
+        <h3 className="text-2xl font-semibold text-green-500 dark:text-white mb-3">
           Why JobPond?
         </h3>
         <ul className="space-y-2 pl-5 text-base list-disc text-gray-700 dark:text-gray-300">

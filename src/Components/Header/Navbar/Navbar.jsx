@@ -44,13 +44,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-green-400 text-white shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white backdrop-blur">
+    <nav className="navbar bg-green-400 shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 backdrop-blur">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 dark:text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -72,12 +72,13 @@ const Navbar = () => {
         </div>
         <Link to="/" className="flex items-center cursor-pointer">
           <img className="w-16 " src={Logo} alt="" />
-          <h2 className=" text-2xl font-bold hidden md:flex">
-            <span className="text-green-900">Job</span>Pond
+          <h2 className=" text-2xl font-bold hidden md:flex text-white">
+            <span className=" dark:text-white">Job</span>
+            <span>Pond</span>
           </h2>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex text-white">
         <ul className="flex gap-8">{links}</ul>
       </div>
       <div className="navbar-end gap-3">

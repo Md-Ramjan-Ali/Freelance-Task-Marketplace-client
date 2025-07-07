@@ -1,14 +1,18 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Privacy = () => {
   return (
     <div>
       <Helmet>
-             <title>Privacy | JobPond</title>
-           </Helmet>
-      <div className="max-w-4xl mx-auto mt-20 px-3 lg:px-0">
-        <h2 className="text-3xl font-bold text-green-500 mb-4 text-center md:text-left">
+        <title>Privacy | JobPond</title>
+      </Helmet>
+      <div
+        className="max-w-4xl mx-auto py-20 px-3 lg:px-0 dark:text-white"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+      >
+        <h2 className="text-3xl font-bold text-green-500 dark:text-white mb-4 text-center md:text-left">
           Privacy Policy
         </h2>
         <p className="text-lg mb-6">

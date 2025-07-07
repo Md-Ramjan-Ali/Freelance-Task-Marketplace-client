@@ -16,9 +16,9 @@ const ErrorPage = () => {
         <h2 className="text-3xl lg:text-5xl font-bold text-[#e11111]">
           404 - Page Not Found
         </h2>
-        <p>Oops! The page you're looking for doesn't exist.</p>
+        <p className="text-gray-700">Oops! The page you're looking for doesn't exist.</p>
         <Link to="/">
-          <button className="btn bg-primary text-white font-bold rounded">
+          <button className="btn bg-green-600 text-white font-bold rounded">
             Go Back Home
           </button>
         </Link>

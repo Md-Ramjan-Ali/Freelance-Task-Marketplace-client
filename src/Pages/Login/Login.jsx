@@ -75,16 +75,22 @@ const Login = () => {
       <Helmet>
         <title>Login | JobPond</title>
       </Helmet>
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
-        <div className="card-body">
-          <h1 className="text-3xl font-bold text-center">Login now!</h1>
+      <div
+        className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 dark:bg-gray-800 dark:text-white"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+      >
+        <div className="card-body dark:text-white">
+          <h1 className="text-3xl font-bold text-center text-green-600 dark:text-white">
+            Login now!
+          </h1>
           <form onSubmit={handleSignIn} className="fieldset">
             {/* email  */}
             <label className="label">Email</label>
             <input
               name="email"
               type="email"
-              className="input"
+              className="input dark:bg-gray-800 dark:border-1 dark:border-white"
               placeholder="Email"
               required
             />
@@ -93,8 +99,8 @@ const Login = () => {
             <input
               name="password"
               type="password"
-              className="input"
-              placeholder="Password"
+              className="input dark:bg-gray-800 dark:border-1 dark:border-white"
+              placeholder="Password "
               required
             />
 

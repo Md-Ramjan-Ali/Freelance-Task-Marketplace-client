@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 const AuthLayout = () => {
   return (
-    <div>
+    <div className='dark:bg-gray-900'>
       <header>
         <Navbar></Navbar>
       </header>

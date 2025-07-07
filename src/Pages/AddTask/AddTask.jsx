@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../../AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { Typewriter } from "react-simple-typewriter";
 
 const AddTask = () => {
   const { user } = use(AuthContext);
@@ -38,8 +39,22 @@ const AddTask = () => {
       <Helmet>
         <title>Add Task | JobPond</title>
       </Helmet>
-      <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="text-center text-2xl font-bold pt-5">Add Job Task</h2>
+      <div
+        className="card bg-base-100 dark:bg-gray-800 w-full shadow-sm dark:text-white"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+      >
+        <h2 className="text-center text-2xl font-bold pt-5 text-green-600 dark:text-white">
+          <Typewriter
+            words={["Add Job Task"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          ></Typewriter>
+        </h2>
         <div className="card-body">
           <form onSubmit={handleAddTask}>
             {/* task title */}
@@ -48,7 +63,7 @@ const AddTask = () => {
               <input
                 name="title"
                 type="text"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 placeholder="Task Title"
                 required
               />
@@ -56,10 +71,10 @@ const AddTask = () => {
 
             {/* Category */}
             <fieldset className="fieldset ">
-              <label className=" text-[.885rem] font-semibold">Category</label>
+              <label className=" text-[.885rem] font-semibold ">Category</label>
               <select
                 name="category"
-                className="select select-bordered w-full"
+                className="select select-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 required
               >
                 <option value="">Select Category</option>
@@ -77,7 +92,7 @@ const AddTask = () => {
               </label>
               <textarea
                 name="description"
-                className="textarea textarea-bordered w-full"
+                className="textarea textarea-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -91,7 +106,7 @@ const AddTask = () => {
                 <input
                   type="date"
                   name="deadline"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                   required
                 />
               </fieldset>
@@ -102,7 +117,7 @@ const AddTask = () => {
                 <input
                   type="number"
                   name="budget"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                   placeholder="Budget"
                   required
                 />
@@ -118,7 +133,7 @@ const AddTask = () => {
                   name="email"
                   value={user.email}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed dark:bg-gray-800 dark:border-1 dark:border-white"
                 />
               </fieldset>
 
@@ -132,7 +147,7 @@ const AddTask = () => {
                   name="name"
                   value={user.displayName}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed dark:bg-gray-800 dark:border-1 dark:border-white"
                 />
               </fieldset>
             </div>

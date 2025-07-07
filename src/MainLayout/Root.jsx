@@ -11,11 +11,13 @@ const Root = () => {
     <div className="dark:bg-gray-900">
       <Navbar></Navbar>
 
-      <main className="bg-base-200/30 dark:bg-gray-900">{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>
+      <main className="bg-base-200/30 dark:bg-gray-900 overflow-hidden">
+        {state == "loading" ? <Loading /> : <Outlet></Outlet>}
+      </main>
       <footer>
         <Footer></Footer>
       </footer>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

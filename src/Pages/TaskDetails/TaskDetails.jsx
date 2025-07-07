@@ -31,11 +31,11 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-5 lg:my-10 px-2 lg:px-0">
+    <div className="max-w-4xl mx-auto my-5 lg:my-10 px-2 lg:px-0 dark:bg-gray-900">
       <Helmet>
         <title>Task Details | JobPond</title>
       </Helmet>
-      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-3 lg:p-5">
+      <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition p-3 lg:p-5 dark:bg-gray-900 dark:text-white">
         <div className="text-center mb-10">
           <div
             className="flex justify-center items-center"
@@ -67,14 +67,14 @@ const TaskDetails = () => {
             <span>
               <PiSubtitlesFill className="text-orange-500" size={30} />
             </span>{" "}
-            <span className="text-green-500"> {title}</span>
+            <span className="text-green-500 dark:text-white"> {title}</span>
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 dark:text-white">
             <span className="font-semibold">Category:</span> {category}
           </p>
           <div className="">
             <p className="font-semibold">Description:</p>
-            <p className="text-sm text-gray-700 mt-1 line-clamp-3">
+            <p className="text-sm text-gray-700 dark:text-white mt-1 line-clamp-3">
               {description}
             </p>
           </div>

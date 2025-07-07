@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import EmtyTask from "../../Components/EmtyTask/EmtyTask";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
   const [bidsCount, setBidsCount] = useState(null);
@@ -10,14 +11,22 @@ const MyPostedTasksTable = ({ tasks, handleTaskDelete }) => {
   }
 
   return (
-    <div>
-      <h2 className="text-3xl font-semibold text-center mb-4 text-green-500">
-        My All Posted Task
+    <div data-aos="zoom-in-up" data-aos-easing="linear">
+      <h2 className="text-3xl font-semibold text-center mb-4 text-green-500 dark:text-white">
+        <Typewriter
+          words={[" My All Posted Task"]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        ></Typewriter>
       </h2>
-      <div className="w-36 mx-auto border-1 mb-10"></div>
+      <div className="w-36 mx-auto border-1 mb-10 dark:text-white"></div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra w-full text-sm">
-          <thead className="bg-base-200 text-base font-semibold">
+        <table className="table dark:text-white w-full text-sm">
+          <thead className="bg-base-200 dark:bg-gray-800 dark:text-white text-base font-semibold">
             <tr>
               <th>No.</th>
               <th>Title</th>

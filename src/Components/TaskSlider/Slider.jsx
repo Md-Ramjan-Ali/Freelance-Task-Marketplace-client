@@ -11,9 +11,9 @@ import "swiper/css/navigation";
 //external css files
 import "./sliderStyle.css";
 
-import sliderImg1 from "../../assets/Slider (12).jpg";
-import sliderImg2 from "../../assets/Slider (13).jpg";
-import sliderImg3 from "../../assets/Slider (4).jpg";
+import sliderImg1 from "../../assets/heroSlide (1).png";
+import sliderImg2 from "../../assets/heroSlider (1).jpg";
+import sliderImg3 from "../../assets/heroSlider (2).jpg";
 import { Link } from "react-router";
 
 const slides = [
@@ -67,7 +67,7 @@ const Slider = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover brightness-50"
+                className="w-full h-full object-center brightness-50"
               />
               <div className="absolute inset-0  flex items-center justify-center text-white px-4">
                 <div className="text-center max-w-2xl space-y-8  rounded-2xl">

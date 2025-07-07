@@ -90,16 +90,22 @@ const Register = () => {
       <Helmet>
         <title>Register | JobPond</title>
       </Helmet>
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
+      <div
+        className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 dark:bg-gray-800 dark:text-white"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+      >
         <div className="card-body">
-          <h1 className="text-3xl font-bold text-center">Sign UP now!</h1>
+          <h1 className="text-3xl font-bold text-center text-green-600 dark:text-white">
+            Sign UP now!
+          </h1>
           <form onSubmit={handleSignUp} className="fieldset">
             {/* Name  */}
             <label className="label">Name</label>
             <input
               name="name"
               type="text"
-              className="input"
+              className="input dark:bg-gray-800 dark:border-1 dark:border-white"
               placeholder="Name"
               required
             />
@@ -109,7 +115,7 @@ const Register = () => {
             <input
               name="photo"
               type="text"
-              className="input"
+              className="input dark:bg-gray-800 dark:border-1 dark:border-white"
               placeholder="Photo URl"
               required
             />
@@ -119,7 +125,7 @@ const Register = () => {
             <input
               name="email"
               type="email"
-              className="input"
+              className="input dark:bg-gray-800 dark:border-1 dark:border-white"
               placeholder="Email"
               required
             />
@@ -130,8 +136,8 @@ const Register = () => {
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
-                className="input"
-                placeholder="Password"
+                className="input dark:bg-gray-800 dark:border-1 dark:border-white"
+                placeholder="Password "
                 required
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"
               />

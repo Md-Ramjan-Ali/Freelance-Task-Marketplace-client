@@ -3,7 +3,11 @@ import { Link } from "react-router";
 
 const DashTaskTable = ({ tasks }) => {
   return (
-    <div className="overflow-x-auto bg-white dark:bg-gray-800 rounded-xl shadow-md">
+    <div
+      className="overflow-x-auto bg-white dark:bg-gray-800 rounded-xl shadow-md"
+      data-aos="zoom-in-up"
+      data-aos-easing="linear"
+    >
       <table className="table  w-full">
         <thead className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
           <tr>

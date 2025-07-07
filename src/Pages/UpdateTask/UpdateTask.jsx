@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 // import { AuthContext } from "../../AuthContext/AuthContext";
 import { useLoaderData } from "react-router";
+import { Typewriter } from "react-simple-typewriter";
 import Swal from "sweetalert2";
 
 const UpdateTask = () => {
@@ -46,9 +47,17 @@ const UpdateTask = () => {
       <Helmet>
         <title>Update Task | JobPond</title>
       </Helmet>
-      <div className="card bg-base-100 w-full shadow-sm">
-        <h2 className="text-2xl font-bold text-center py-5">
-          Update Your Task
+      <div className="card bg-base-100 dark:bg-gray-800 w-full shadow-sm dark:text-white">
+        <h2 className="text-2xl font-bold text-center py-5 text-green-600 dark:text-white">
+          <Typewriter
+            words={[" Update Your Task"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          ></Typewriter>
         </h2>
         <div className="card-body">
           <form onSubmit={handleUpdateTask}>
@@ -61,7 +70,7 @@ const UpdateTask = () => {
                 name="title"
                 type="text"
                 defaultValue={title}
-                className="input input-bordered w-full"
+                className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 placeholder="Task Title"
                 required
               />
@@ -73,7 +82,7 @@ const UpdateTask = () => {
               <select
                 name="category"
                 defaultValue={category}
-                className="select select-bordered w-full"
+                className="select select-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 required
               >
                 <option value="">Select Category</option>
@@ -92,7 +101,7 @@ const UpdateTask = () => {
               <textarea
                 name="description"
                 defaultValue={description}
-                className="textarea textarea-bordered w-full"
+                className="textarea textarea-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -107,7 +116,7 @@ const UpdateTask = () => {
                   type="date"
                   name="deadline"
                   defaultValue={deadline}
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                   required
                 />
               </fieldset>
@@ -119,7 +128,7 @@ const UpdateTask = () => {
                   type="number"
                   name="budget"
                   defaultValue={budget}
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-gray-800 dark:border-1 dark:border-white"
                   placeholder="Budget"
                   required
                 />
@@ -135,7 +144,7 @@ const UpdateTask = () => {
                   name="email"
                   defaultValue={email}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed dark:bg-gray-800 dark:border-1 dark:border-white"
                 />
               </fieldset>
 
@@ -149,7 +158,7 @@ const UpdateTask = () => {
                   name="name"
                   defaultValue={name}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input input-bordered w-full  cursor-not-allowed dark:bg-gray-800 dark:border-1 dark:border-white"
                 />
               </fieldset>
             </div>

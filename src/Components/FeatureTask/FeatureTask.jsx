@@ -41,7 +41,7 @@ const FeatureTask = () => {
             delaySpeed={1000}
           ></Typewriter>
         </h2>
-        <div className="border-1 w-15 mx-auto mb-4"></div>
+        <div className="border-1 w-15 mx-auto mb-4 dark:text-white"></div>
 
         <p
           className="text-xl  text-center dark:text-white"
