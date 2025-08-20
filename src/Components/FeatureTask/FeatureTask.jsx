@@ -31,15 +31,7 @@ const FeatureTask = () => {
       {/* feature heading */}
       <div className="">
         <h2 className="text-3xl font-semibold mb-3 text-center text-green-500 dark:text-white">
-          <Typewriter
-            words={["Featured Job Tasks"]}
-            loop={true}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          ></Typewriter>
+          Featured Job Tasks
         </h2>
         <div className="border-1 w-15 mx-auto mb-4 dark:text-white"></div>
 
