@@ -50,7 +50,7 @@ const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full h-[70vh]">
+    <div className="w-full h-[100vh]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
